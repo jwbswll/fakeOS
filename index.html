@@ -10,11 +10,11 @@
 <body>
   <main>
     <img class="wallpaper" src="./images/ventura-wallpaper.jpg" alt="windows xp wallpaper">
-    
+    <div class="menu-background"></div>
     <div class="menu-bar">
       <div class="menu-bar__btns">
         <button class="menu-bar__btns__item">Logo</button>
-        <button class="menu-bar__btns__item">Finder</button>
+        <button class="menu-bar__btns__item menu-bar__btns__item--current-app">Finder</button>
         <button class="menu-bar__btns__item">File</button>
         <button class="menu-bar__btns__item">Edit</button>
         <button class="menu-bar__btns__item">View</button>
@@ -37,14 +37,15 @@
       <div class="desktop__icon"><img src="" alt=""><p></p></div>
       <div class="desktop__icon"><img src="" alt=""><p></p></div>
     </div>
-    
-    <div class="dock">
-      <div class="app"><img src="" alt="finder"><div class="app__dot"></div></div>
-      <div class="app"><img src="" alt="photos"><div class="app__dot"></div></div>
-      <div class="app"><img src="" alt="text edit"><div class="app__dot"></div></div>
-      <div class="separator"></div>
-      <div class="app app--recycle-bin"><img src="" alt="recycle bin"></div>
-    </div>
+    <section class="dock-section">
+      <div class="dock">
+        <div class="dock__app"><img src="" alt="finder"><div class="app__dot"></div></div>
+        <div class="dock__app"><img src="" alt="photos"><div class="app__dot"></div></div>
+        <div class="dock__app"><img src="" alt="text edit"><div class="app__dot"></div></div>
+        <div class="dock__separator"></div>
+        <div class="dock__app dock__app--recycle-bin"><img src="" alt="recycle bin"></div>
+      </div>
+  </section>
 
   </main>
 </body>

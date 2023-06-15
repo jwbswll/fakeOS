@@ -6,39 +6,76 @@
 main {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 900px;
   width: 100vh;
 }
-
-.wallpaper {
+main .wallpaper {
   height: 100vh;
   width: 100vw;
   object-fit: cover;
   position: fixed;
   z-index: -1;
 }
-
-.menu-bar {
+main .menu-background {
+  width: 100vw;
+  height: 40px;
+  background: linear-gradient(to right, rgba(209, 118, 0, 0.362), rgba(209, 49, 0, 0.362), rgba(53, 12, 0, 0.673));
+  position: fixed;
+  z-index: -1;
+  backdrop-filter: blur(20px);
+}
+main .menu-bar {
   display: flex;
   width: 100vw;
   height: 40px;
-  background-color: darkblue;
-  opacity: 70%;
-  backdrop-filter: blur(50px);
 }
-.menu-bar__btns {
+main .menu-bar__btns {
   display: flex;
 }
-.menu-bar__btns__item {
-  background-color: darkblue;
+main .menu-bar__btns__item {
+  background-color: rgba(255, 255, 255, 0);
   color: white;
   border: none;
   font-size: 1.2em;
-  margin-right: 20px;
+  padding: 0 20px 0 20px;
 }
-.menu-bar__btns__item:active {
-  background-color: white;
-  opacity: 30%;
+main .menu-bar__btns__item--current-app {
+  font-weight: 600;
+}
+main .desktop {
+  margin: 50px;
+  border: 2px solid blue;
+  height: 50%;
+  width: 30%;
+  display: flex;
+}
+main .dock-section {
+  width: 100vw;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+}
+main .dock-section .dock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 540px;
+  height: 80%;
+  border: 1px solid rgba(128, 128, 128, 0.239);
+  box-shadow: 2px 0px 40px 5px rgba(0, 0, 0, 0.4);
+  background-color: rgba(128, 128, 128, 0.239);
+  border-radius: 30px;
+  backdrop-filter: blur(20px);
+}
+main .dock-section .dock__app {
+  height: 80%;
+  width: 77px;
+  margin: 20px;
+  border: 2px dashed red;
 }
 
 /*# sourceMappingURL=style.css.map */
