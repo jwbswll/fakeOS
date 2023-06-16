@@ -18,7 +18,7 @@ main .wallpaper {
 }
 main .menu-background {
   width: 100vw;
-  height: 40px;
+  height: 30px;
   background: linear-gradient(to right, rgba(209, 118, 0, 0.362), rgba(209, 49, 0, 0.362), rgba(53, 12, 0, 0.673));
   position: fixed;
   z-index: -1;
@@ -27,7 +27,8 @@ main .menu-background {
 main .menu-bar {
   display: flex;
   width: 100vw;
-  height: 40px;
+  height: 30px;
+  justify-content: space-between;
 }
 main .menu-bar__btns {
   display: flex;
@@ -36,25 +37,62 @@ main .menu-bar__btns__item {
   background-color: rgba(255, 255, 255, 0);
   color: white;
   border: none;
-  font-size: 1.2em;
+  font-size: 1.1em;
   padding: 0 20px 0 20px;
 }
 main .menu-bar__btns__item--current-app {
   font-weight: 600;
 }
+main .menu-bar__btns__item--apple-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .menu-bar__btns__item--apple-logo img {
+  height: 25px;
+  width: 25px;
+}
+main .menu-bar__tray {
+  display: flex;
+  width: 240px;
+  align-items: center;
+}
+main .menu-bar__tray__item {
+  margin: 0 10px 0 10px;
+  color: white;
+  font-size: 1.1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .menu-bar__tray #clock {
+  width: 150px;
+}
 main .desktop {
-  margin: 50px;
-  border: 2px solid blue;
-  height: 50%;
-  width: 30%;
+  margin: 20px;
+  height: 900px;
+  width: 20%;
   display: flex;
   flex-direction: column;
 }
 main .desktop__icon {
-  height: 77px;
-  width: 77px;
-  border: 2px dashed red;
-  margin: 10px;
+  height: 120px;
+  width: 100px;
+  margin: 10px 0 0 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+main .desktop__icon__img {
+  height: 90px;
+  width: 90px;
+}
+main .desktop__icon__photos {
+  height: 80px;
+  width: 80px;
+}
+main .desktop__icon__name {
+  font-size: 0.8em;
 }
 main .dock-section {
   width: 100vw;
@@ -79,10 +117,29 @@ main .dock-section .dock {
   backdrop-filter: blur(20px);
 }
 main .dock-section .dock__app {
-  height: 80%;
-  width: 77px;
+  height: 100%;
+  width: 93px;
   margin: 15px;
-  border: 2px dashed red;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+main .dock-section .dock__app__icon {
+  height: 90%;
+  width: 90%;
+}
+main .dock-section .dock__app__photos {
+  height: 80%;
+  width: 80%;
+  padding: 6px;
+}
+main .dock-section .dock__app__dot--app-open {
+  height: 6px;
+  width: 6px;
+  background-color: lightgray;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 1px;
 }
 main .dock-section .dock__separator {
   height: 80%;

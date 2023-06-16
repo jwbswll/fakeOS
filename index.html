@@ -7,13 +7,13 @@
   <link rel="stylesheet" href="./styles/style.css">
   <script src="./script.js" defer></script>
 </head>
-<body>
+<body onload="updateTime()">
   <main>
     <img class="wallpaper" src="./images/ventura-wallpaper.jpg" alt="windows xp wallpaper">
     <div class="menu-background"></div>
     <div class="menu-bar">
       <div class="menu-bar__btns">
-        <button class="menu-bar__btns__item">Logo</button>
+        <button class="menu-bar__btns__item menu-bar__btns__item--apple-logo"><img src="./images/apple.png" alt="apple-logo"></button>
         <button class="menu-bar__btns__item menu-bar__btns__item--current-app">Finder</button>
         <button class="menu-bar__btns__item">File</button>
         <button class="menu-bar__btns__item">Edit</button>
@@ -25,25 +25,25 @@
 
       <div class="menu-bar__tray">
         <div class="menu-bar__tray__item"></div>
-        <div class="menu-bar__tray__item"></div>
-        <div class="menu-bar__tray__item"></div>
+        <div><img class="menu-bar__tray__item menu-bar__tray__item--wifi" src="./images/wifi.png" alt="wifi"></div>
+        <div><span class="menu-bar__tray__item" id="clock"></span></div>
 
       </div>
     </div>
 
     <div class="desktop">
-      <div class="desktop__icon"><img src="" alt="photos"><p></p></div>
-      <div class="desktop__icon"><img src="" alt="text edit"><p></p></div>
-      <div class="desktop__icon"><img src="" alt="finder"><p></p></div>
-      <div class="desktop__icon"><img src="" alt="recycle bin"><p></p></div>
+      <div class="desktop__icon"><img class="desktop__icon__photos" src="./images/photos.png" alt="photos"><p class="desktop__icon__name">Photos</p></div>
+      <div class="desktop__icon"><img class="desktop__icon__img" src="./images/TextEdit.png" alt="text edit"><p class="desktop__icon__name">Text Edit</p></div>
+      <div class="desktop__icon"><img class="desktop__icon__img" src="./images/finder.png" alt="finder"><p class="desktop__icon__name">Finder</p></div>
+      <div class="desktop__icon"><img class="desktop__icon__img" src="./images/recycle-bin.png" alt="recycle bin"><p class="desktop__icon__name">Bin</p></div>
     </div>
     <section class="dock-section">
       <div class="dock">
-        <div class="dock__app"><img src="" alt="finder"><div class="app__dot"></div></div>
-        <div class="dock__app"><img src="" alt="photos"><div class="app__dot"></div></div>
-        <div class="dock__app"><img src="" alt="text edit"><div class="app__dot"></div></div>
+        <div class="dock__app"><img class="dock__app__icon" src="./images/finder.png" alt="finder"><div class="dock__app__dot--app-open"></div></div>
+        <div class="dock__app"><img class="dock__app__photos" src="./images/photos.png" alt="photos"><div class="dock__app__dot"></div></div>
+        <div class="dock__app"><img class="dock__app__icon" src="./images/TextEdit.png" alt="text edit"><div class="dock__app__dot"></div></div>
         <div class="dock__separator"></div>
-        <div class="dock__app dock__app--recycle-bin"><img src="" alt="recycle bin"></div>
+        <div class="dock__app dock__app--recycle-bin"><img class="dock__app__icon" src="./images/recycle-bin.png" alt="recycle bin"></div>
       </div>
   </section>
 
