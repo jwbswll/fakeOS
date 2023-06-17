@@ -52,6 +52,14 @@ main .menu-bar__btns__item--apple-logo img {
   height: 25px;
   width: 25px;
 }
+main .menu-bar__modal {
+  display: flex;
+  border: 1px solid darkgray;
+  border-radius: 20px;
+}
+main .menu-bar__modal__list {
+  list-style: none;
+}
 main .menu-bar__tray {
   display: flex;
   width: 240px;
@@ -86,13 +94,20 @@ main .desktop__icon {
 main .desktop__icon__img {
   height: 90px;
   width: 90px;
+  -webkit-filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2156862745));
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2156862745));
 }
 main .desktop__icon__photos {
   height: 80px;
   width: 80px;
+  -webkit-filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2156862745));
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2156862745));
 }
 main .desktop__icon__name {
   font-size: 0.8em;
+  color: white;
+  -webkit-filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2156862745));
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2156862745));
 }
 main .dock-section {
   width: 100vw;
@@ -127,11 +142,15 @@ main .dock-section .dock__app {
 main .dock-section .dock__app__icon {
   height: 90%;
   width: 90%;
+  -webkit-filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2156862745));
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2156862745));
 }
 main .dock-section .dock__app__photos {
   height: 80%;
   width: 80%;
   padding: 6px;
+  -webkit-filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2156862745));
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2156862745));
 }
 main .dock-section .dock__app__dot--app-open {
   height: 6px;
