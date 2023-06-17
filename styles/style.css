@@ -62,9 +62,10 @@ main .menu-bar__modal {
   position: fixed;
   z-index: 10;
   top: 30.23px;
+  -webkit-filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2156862745));
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2156862745));
 }
 main .menu-bar__modal__apple {
-  display: none;
   left: 11px;
 }
 main .menu-bar__modal__current-app {

@@ -68,8 +68,10 @@ main {
       position: fixed;
       z-index: 10;
       top: 30.23px;
+      -webkit-filter: drop-shadow(2px 2px 3px #00000037);
+      filter: drop-shadow(2px 2px 3px #00000037);
       &__apple{
-        display: none;
+        // display: none;
         left: 11px;
       }
       &__current-app {
