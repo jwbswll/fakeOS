@@ -88,6 +88,7 @@ main .menu-bar__modal__go {
   left: 390px;
 }
 main .menu-bar__modal__window {
+  display: none;
   left: 452px;
 }
 main .menu-bar__modal__help {
