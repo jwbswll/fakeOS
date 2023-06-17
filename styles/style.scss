@@ -59,11 +59,69 @@ main {
       }
     }
     &__modal {
-      display: flex;
-      border: 1px solid darkgray;
-      border-radius: 20px;
+      border: 1px solid rgba(169, 169, 169, 0.136);
+      border-radius: 5px;
+      background-color: rgba(169, 169, 169, 0.136);
+      backdrop-filter: blur(200px);
+      padding: 0px;
+      width: 380px;
+      &__apple{
+        // display: none;
+        position: fixed;
+        z-index: 10;
+        top: 30.2px;
+        left: 5px;
+      }
+      &__current-app {
+        display: none;
+      }
+      &__file {
+        display: none;
+      }
+      &__edit {
+        display: none;
+      }
+      &__view {
+        display: none;
+      }
+      &__go {
+        display: none;
+      }
+      &__window {
+        display: none;
+      }
+      &__help {
+        display: none;
+      }
       &__list {
         list-style: none;
+        padding-left: 0;
+        &__separator {
+          border: 0.5px solid rgba(211, 211, 211, 0.323);
+          height: 0px;
+          width: 360px;
+        }
+        &__item {
+          color: white;
+          display: flex;
+          justify-content: space-between;
+          width: 360px;
+          padding: 3px 10px 3px 10px;
+          &--shortcut {
+            color: rgba(211, 211, 211, 0.323);
+          }
+          &__gray {
+            color: rgba(211, 211, 211, 0.323);
+          }
+          input {
+            border: 0.01px solid rgba(211, 211, 211, 0.323);
+            background-color: rgba(211, 211, 211, 0.323);
+            border-radius: 5px;
+            width: 360px;
+            padding: 2px;
+            color: lightgray;
+          }
+        }
       }
     }
     &__tray {

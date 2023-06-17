@@ -53,12 +53,69 @@ main .menu-bar__btns__item--apple-logo img {
   width: 25px;
 }
 main .menu-bar__modal {
-  display: flex;
-  border: 1px solid darkgray;
-  border-radius: 20px;
+  border: 1px solid rgba(169, 169, 169, 0.136);
+  border-radius: 5px;
+  background-color: rgba(169, 169, 169, 0.136);
+  backdrop-filter: blur(200px);
+  padding: 0px;
+  width: 380px;
+}
+main .menu-bar__modal__apple {
+  position: fixed;
+  z-index: 10;
+  top: 30.2px;
+  left: 5px;
+}
+main .menu-bar__modal__current-app {
+  display: none;
+}
+main .menu-bar__modal__file {
+  display: none;
+}
+main .menu-bar__modal__edit {
+  display: none;
+}
+main .menu-bar__modal__view {
+  display: none;
+}
+main .menu-bar__modal__go {
+  display: none;
+}
+main .menu-bar__modal__window {
+  display: none;
+}
+main .menu-bar__modal__help {
+  display: none;
 }
 main .menu-bar__modal__list {
   list-style: none;
+  padding-left: 0;
+}
+main .menu-bar__modal__list__separator {
+  border: 0.5px solid rgba(211, 211, 211, 0.323);
+  height: 0px;
+  width: 360px;
+}
+main .menu-bar__modal__list__item {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  width: 360px;
+  padding: 3px 10px 3px 10px;
+}
+main .menu-bar__modal__list__item--shortcut {
+  color: rgba(211, 211, 211, 0.323);
+}
+main .menu-bar__modal__list__item__gray {
+  color: rgba(211, 211, 211, 0.323);
+}
+main .menu-bar__modal__list__item input {
+  border: 0.01px solid rgba(211, 211, 211, 0.323);
+  background-color: rgba(211, 211, 211, 0.323);
+  border-radius: 5px;
+  width: 360px;
+  padding: 2px;
+  color: lightgray;
 }
 main .menu-bar__tray {
   display: flex;
