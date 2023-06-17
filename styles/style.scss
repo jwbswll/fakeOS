@@ -63,35 +63,42 @@ main {
       border-radius: 5px;
       background-color: rgba(169, 169, 169, 0.136);
       backdrop-filter: blur(200px);
-      padding: 0px;
-      width: 380px;
+      padding: 5px 0px 5px 10px;
+      width: 372px;
+      position: fixed;
+      z-index: 10;
+      top: 30.23px;
       &__apple{
-        // display: none;
-        position: fixed;
-        z-index: 10;
-        top: 30.2px;
-        left: 5px;
+        display: none;
+        left: 11px;
       }
       &__current-app {
         display: none;
+        left: 73px;
       }
       &__file {
         display: none;
+        left: 170px;
       }
       &__edit {
         display: none;
+        left: 238px;
       }
       &__view {
         display: none;
+        left: 308px;
       }
       &__go {
         display: none;
+        left: 390px;
       }
       &__window {
-        display: none;
+        // display: none;
+        left: 452px;
       }
       &__help {
         display: none;
+        left: 558px;
       }
       &__list {
         list-style: none;
@@ -106,11 +113,11 @@ main {
           display: flex;
           justify-content: space-between;
           width: 360px;
-          padding: 3px 10px 3px 10px;
+          padding: 3px 0px 3px 0px;
           &--shortcut {
             color: rgba(211, 211, 211, 0.323);
           }
-          &__gray {
+          &--gray {
             color: rgba(211, 211, 211, 0.323);
           }
           input {
@@ -120,6 +127,7 @@ main {
             width: 360px;
             padding: 2px;
             color: lightgray;
+            font-size: 1em;
           }
         }
       }

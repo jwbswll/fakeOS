@@ -57,35 +57,42 @@ main .menu-bar__modal {
   border-radius: 5px;
   background-color: rgba(169, 169, 169, 0.136);
   backdrop-filter: blur(200px);
-  padding: 0px;
-  width: 380px;
-}
-main .menu-bar__modal__apple {
+  padding: 5px 0px 5px 10px;
+  width: 372px;
   position: fixed;
   z-index: 10;
-  top: 30.2px;
-  left: 5px;
+  top: 30.23px;
+}
+main .menu-bar__modal__apple {
+  display: none;
+  left: 11px;
 }
 main .menu-bar__modal__current-app {
   display: none;
+  left: 73px;
 }
 main .menu-bar__modal__file {
   display: none;
+  left: 170px;
 }
 main .menu-bar__modal__edit {
   display: none;
+  left: 238px;
 }
 main .menu-bar__modal__view {
   display: none;
+  left: 308px;
 }
 main .menu-bar__modal__go {
   display: none;
+  left: 390px;
 }
 main .menu-bar__modal__window {
-  display: none;
+  left: 452px;
 }
 main .menu-bar__modal__help {
   display: none;
+  left: 558px;
 }
 main .menu-bar__modal__list {
   list-style: none;
@@ -101,12 +108,12 @@ main .menu-bar__modal__list__item {
   display: flex;
   justify-content: space-between;
   width: 360px;
-  padding: 3px 10px 3px 10px;
+  padding: 3px 0px 3px 0px;
 }
 main .menu-bar__modal__list__item--shortcut {
   color: rgba(211, 211, 211, 0.323);
 }
-main .menu-bar__modal__list__item__gray {
+main .menu-bar__modal__list__item--gray {
   color: rgba(211, 211, 211, 0.323);
 }
 main .menu-bar__modal__list__item input {
@@ -116,6 +123,7 @@ main .menu-bar__modal__list__item input {
   width: 360px;
   padding: 2px;
   color: lightgray;
+  font-size: 1em;
 }
 main .menu-bar__tray {
   display: flex;
