@@ -187,6 +187,40 @@ main .app-modal {
   border: 1px solid black;
   border-radius: 15px;
 }
+main .app-modal__btns {
+  height: 50px;
+  width: 90px;
+}
+main .app-modal__btns__btn {
+  height: 15px;
+  width: 15px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 11;
+}
+main .app-modal__btns__btn--close {
+  background-color: red;
+  left: 20px;
+  top: 25px;
+}
+main .app-modal__btns__btn--minimise {
+  background-color: rgb(252, 189, 70);
+  left: 45px;
+  top: 25px;
+}
+main .app-modal__btns__btn--maximise {
+  background-color: lightgreen;
+  left: 70px;
+  top: 25px;
+}
+main .app-modal--photos__sidebar {
+  height: 100%;
+  width: 300px;
+  border: 1px dashed red;
+  position: absolute;
+  top: 0px;
+}
 main .dock-section {
   width: 100vw;
   height: 120px;

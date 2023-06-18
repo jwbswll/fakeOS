@@ -197,6 +197,43 @@ main {
     width: 80vw;
     border: 1px solid black;
     border-radius: 15px;
+    &__btns {
+      height: 50px;
+      width: 90px;
+      &__btn {
+        height: 15px;
+        width: 15px;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 11;
+        &--close {
+          background-color: red;
+          left: 20px;
+          top: 25px;
+        }
+        &--minimise {
+          background-color: rgb(252, 189, 70);
+          left: 45px;
+          top: 25px;
+        }
+        &--maximise {
+          background-color: lightgreen;
+          left: 70px;
+          top: 25px;
+        }
+      }
+    }
+    &--photos {
+      &__sidebar {
+        height: 100%;
+        width: 300px;
+        border: 1px dashed red;
+        position: absolute;
+        top: 0px;
+        
+      }
+    }
   }
   
   .dock-section {
