@@ -3,6 +3,7 @@
 $primary: rgba(209, 118, 0, 0.362);
 $secondary: lightblue;
 $tertiary: rgb(127, 127, 206);
+$menu-modal: rgba(0, 0, 0, 0.38);
 
 * {
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
@@ -59,10 +60,10 @@ main {
       }
     }
     &__modal {
-      border: 1px solid rgba(169, 169, 169, 0.136);
+      border: 1px solid rgba(196, 196, 196, 0.386);
       border-radius: 5px;
-      background-color: rgba(169, 169, 169, 0.136);
-      backdrop-filter: blur(200px);
+      background-color: $menu-modal;
+      backdrop-filter: blur(100px);
       padding: 5px 0px 5px 10px;
       width: 372px;
       position: fixed;
@@ -71,7 +72,7 @@ main {
       -webkit-filter: drop-shadow(2px 2px 3px #00000037);
       filter: drop-shadow(2px 2px 3px #00000037);
       &__apple{
-        // display: none;
+        display: none;
         left: 11px;
       }
       &__current-app {
@@ -172,7 +173,7 @@ main {
         -webkit-filter: drop-shadow(2px 2px 3px #00000037);
         filter: drop-shadow(2px 2px 3px #00000037);
       }
-      &__photos {
+      &__big {
         height: 80px;
         width: 80px;
         -webkit-filter: drop-shadow(2px 2px 3px #00000037);
@@ -185,7 +186,17 @@ main {
         filter: drop-shadow(2px 2px 3px #00000037);
       }
     }
+  }
 
+  .app-modal {
+    position: fixed;
+    z-index: 10;
+    top: 6vh;
+    left: 10vw;
+    height: 80vh;
+    width: 80vw;
+    border: 1px solid black;
+    border-radius: 15px;
   }
   
   .dock-section {
@@ -201,7 +212,7 @@ main {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 540px;
+      width: 660px;
       height: 80%;
       border: 1px solid rgba(128, 128, 128, 0.239);
       box-shadow: 2px 0px 25px 2px rgb(0, 0, 0, 0.25) ;
@@ -221,7 +232,7 @@ main {
           -webkit-filter: drop-shadow(2px 2px 3px #00000037);
           filter: drop-shadow(2px 2px 3px #00000037);
         }
-        &__photos {
+        &__big {
           height: 80%;
           width: 80%;
           padding: 6px;
