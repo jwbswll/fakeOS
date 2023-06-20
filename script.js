@@ -69,9 +69,27 @@ const time = () => {
 				break;
 		}
 	};
+	const minutes = () => {
+		const minute = date.getMinutes();
+		if (parseInt(minute) < 10) {
+			return "0" + minute;
+		} else {
+			return minute;
+		}
+	};
+
+	const hours = () => {
+		const hour = date.getHours();
+		if (parseInt(hour) < 10) {
+			return "0" + hour;
+		} else {
+			return hour;
+		}
+	};
+
 	let dayOfMonth = date.getUTCDate();
 
-	let currentDateTime = `${day()} ${dayOfMonth} ${month()} ${date.getHours()}:${date.getMinutes()}`;
+	let currentDateTime = `${day()} ${dayOfMonth} ${month()} ${hours()}:${minutes()}`;
 	let clockSpan = document.getElementById("clock");
 	clockSpan.innerHTML = currentDateTime;
 };

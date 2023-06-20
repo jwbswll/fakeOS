@@ -192,46 +192,163 @@ main {
     position: fixed;
     z-index: 10;
     top: 6vh;
-    left: 10vw;
+    left: 20vw;
     height: 80vh;
-    width: 80vw;
+    width: 60vw;
     border: 1px solid black;
-    border-radius: 15px;
-    &__btns {
-      height: 50px;
-      width: 90px;
-      &__btn {
-        height: 15px;
-        width: 15px;
-        border: 1px solid transparent;
-        border-radius: 50%;
-        position: absolute;
-        z-index: 11;
-        &--close {
-          background-color: red;
-          left: 20px;
-          top: 25px;
+    border-radius: 16px;
+    // display: none;
+    &__top-bar {
+      height: 64px;
+      width: 100%;
+      background-color: #3B373C;
+      border-bottom: 1px solid black;
+      border-radius: 15px 15px 0 0;
+      margin: 0.1px;
+      &__btns {
+        height: 50px;
+        width: 90px;
+        &__btn {
+          height: 15px;
+          width: 15px;
+          border: 1px solid transparent;
+          border-radius: 50%;
+          position: absolute;
+          z-index: 11;
+          &--close {
+            background-color: red;
+            left: 20px;
+            top: 25px;
+          }
+          &--minimise {
+            background-color: rgb(252, 189, 70);
+            left: 45px;
+            top: 25px;
+          }
+          &--maximise {
+            background-color: lightgreen;
+            left: 70px;
+            top: 25px;
+          }
         }
-        &--minimise {
-          background-color: rgb(252, 189, 70);
-          left: 45px;
-          top: 25px;
+      }
+      &--photos {
+        color: darkgray;
+        display: none;
+        &--back {
+          position: fixed;
+          left: 27vw;
+          top: 7.5vh;
+          font-size: 1.8em;
         }
-        &--maximise {
-          background-color: lightgreen;
-          left: 70px;
-          top: 25px;
+        &--my-albums {
+          position: fixed;
+          left: 48vw;
+          top: 8.3vh;
+          font-size: 1.1em;
+        }
+        &--search {
+          position: fixed;
+          top: 7.9vh;
+          left: 67.8vw;
+          padding: 4px;
+          font-size: 1.1em;
+          width: 180px;
+          border: 0.1px solid rgba(169, 169, 169, 0.236);
+          border-radius: 5px;
+          background-color: #3B373C;
+          color: darkgray
+        }
+      }
+      &__textedit {
+        &__title {
+          position: absolute;
+          left: 470px;
+          top: 22px;
+          font-size: 1.1em;
+          color: darkgray;
+          display: none;
         }
       }
     }
     &--photos {
-      &__sidebar {
-        height: 100%;
-        width: 300px;
-        border: 1px dashed red;
+      display: none;
+      &__main {
+        border: 0.5px solid darkgray;
+        border-radius: 15px;
+        width: 59.99vw;
+        height: 44.78vw;
+        margin: 0.01%;
         position: absolute;
-        top: 0px;
-        
+        left: 20vw;
+        top: 6.1vh;
+        z-index: 11;
+        &--title-bar {
+          width: 97.05%;
+          height: 65px;
+          background-color: #2B212C;
+          padding: 10px 15px;
+          position: absolute;
+          top: 64px;
+          z-index: 11;
+          &__title {
+            color: white;
+          }
+          &__date {
+            color: darkgray;
+            padding-top: 10px;
+          }
+          &__amount-of-photos {
+            color: darkgray;
+            font-size: 0.9em;
+            position: absolute;
+            top: 125px;
+            left: 113px; 
+          }
+        }
+        &--gallery {
+          display: none;
+          background-color: #1E1E1E;
+          height: 590px;
+          width: 98%;
+          border-radius: 0 0 15px 15px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          padding: 10px;
+          position: absolute;
+          top: 141px;
+          &__img {
+            height: 150px;
+            width: 200px;
+            object-fit: cover;
+            margin: 20px;
+          }
+        }
+      } 
+    } 
+    &--textedit {
+      &__textbox {
+      background-color: #1E1E1E;
+      height: 91.5%;
+      width:100%;
+      border-radius: 0 0 14px 14px;
+      display: none;
+        &__textarea {
+        background-color: #1E1E1E;
+        border: none;
+        color: white;
+        border: none;
+        resize: none;
+        outline: none;
+        }
+      }
+    }
+    &--reminders {
+      &--sidebar {
+        border: 2px dashed red;
+        height: 100%;
+        width: 40%;
       }
     }
   }
@@ -296,6 +413,7 @@ main {
     }
   }
 }
+
 
 
 
