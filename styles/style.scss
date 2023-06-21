@@ -227,7 +227,10 @@ main {
     width: 60vw;
     border: 1px solid black;
     border-radius: 16px;
-    // display: none;
+    visibility: hidden;
+    &__active {
+      visibility: visible;
+    }
     &__top-bar {
       height: 64px;
       width: 60vw;
@@ -237,6 +240,7 @@ main {
       margin: 0.1px;
       position: fixed;
       z-index: 9;
+
 
       &__btns {
         height: 50px;
@@ -267,18 +271,20 @@ main {
       }
       &--photos {
         color: darkgray;
-        display: none;
+        visibility: hidden;
         &--back {
           position: fixed;
           left: 27vw;
           top: 7.5vh;
           font-size: 1.8em;
+          z-index: 1000;
         }
         &--my-albums {
           position: fixed;
           left: 48vw;
           top: 8.3vh;
           font-size: 1.1em;
+          z-index: 1000;
         }
         &--search {
           position: fixed;
@@ -290,22 +296,32 @@ main {
           border: 0.1px solid rgba(169, 169, 169, 0.236);
           border-radius: 5px;
           background-color: #3B373C;
-          color: darkgray
+          color: darkgray;
+          z-index: 1000;
+        }
+        &--active {
+          visibility: visible
         }
       }
       &__textedit {
+        visibility: hidden;
         &__title {
           position: absolute;
           left: 470px;
           top: 22px;
           font-size: 1.1em;
           color: darkgray;
-          display: none;
+        }
+        &--active {
+          visibility: visible;
         }
       }
     }
     &--photos {
-      display: none;
+      visibility: hidden;
+      &--active {
+        visibility: visible;
+      }
       &__main {
         border: 0.5px solid darkgray;
         border-radius: 15px;
@@ -317,13 +333,13 @@ main {
         top: 6.1vh;
         z-index: 11;
         &--title-bar {
-          width: 97.05%;
+          width: 97.02%;
           height: 65px;
           background-color: #2B212C;
           padding: 10px 15px;
           position: absolute;
           top: 64px;
-          z-index: 11;
+          z-index: 1000;
           &__title {
             color: white;
           }
@@ -335,7 +351,7 @@ main {
             color: darkgray;
             font-size: 0.9em;
             position: absolute;
-            top: 125px;
+            top: 59.5px;
             left: 113px; 
           }
         }
@@ -350,7 +366,7 @@ main {
           justify-content: center;
           padding: 10px;
           position: absolute;
-          top: 141px;
+          top: 142px;
           &__img {
             height: 150px;
             width: 200px;
@@ -361,12 +377,17 @@ main {
       } 
     } 
     &--textedit {
+      visibility: hidden;
+      &--active {
+        visibility: visible;
+      }
       &__textbox {
       background-color: #1E1E1E;
       height: 91.5%;
       width:100%;
       border-radius: 0 0 14px 14px;
-      display: none;
+      position: absolute;
+      top: 64px;
         &__textarea {
         background-color: #1E1E1E;
         border: none;
@@ -374,10 +395,15 @@ main {
         border: none;
         resize: none;
         outline: none;
+        position: absolute;
         }
       }
     }
     &--reminders {
+      visibility: hidden;
+      &--active {
+        visibility: visible;
+      }
       &--sidebar {
         border: 2px solid rgba(255, 255, 255, 0);
         border-radius: 14px 0 0 14px;

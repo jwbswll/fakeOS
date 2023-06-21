@@ -155,3 +155,32 @@ overlay.addEventListener("click", () => {
 		}
 	});
 });
+
+const appModals = document.querySelectorAll(".app-modal");
+const desktopIcons = document.querySelectorAll(".desktop__icon");
+
+console.log(appModals);
+console.log(desktopIcons);
+
+desktopIcons.forEach((icon) => {
+	icon.addEventListener("dblclick", () => {
+		if (icon.classList.contains("photos")) {
+			document
+				.querySelector(".app-modal__photos")
+				.classList.add("app-modal__active");
+			document
+				.querySelector(".app-modal__top-bar--photos")
+				.classList.add("app-modal__top-bar--photos--active");
+			document
+				.querySelector(".app-modal--photos")
+				.classList.add("app-modal--photos--active");
+		} else if (icon.classList.contains("textedit")) {
+			document
+				.querySelector(".app-modal__textedit")
+				.classList.add("app-modal__active");
+			document
+				.querySelector(".app-modal__top-bar__textedit")
+				.classList.add("app-modal__top-bar__textedit--active");
+		}
+	});
+});
