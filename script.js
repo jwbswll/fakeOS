@@ -93,3 +93,65 @@ const time = () => {
 	let clockSpan = document.getElementById("clock");
 	clockSpan.innerHTML = currentDateTime;
 };
+
+const menubarModals = document.querySelectorAll(".menu-bar__modal");
+
+const menubarButtons = document.querySelectorAll(".menu-bar__btns__item");
+
+const apple = document.querySelector("#apple");
+const currentApp = document.querySelector("#currentApp");
+const file = document.querySelector("#file");
+const edit = document.querySelector("#edit");
+const view = document.querySelector("#view");
+const go = document.querySelector("#go");
+const windowModal = document.querySelector("#window");
+const help = document.querySelector("#help");
+const overlay = document.querySelector(".overlay");
+
+menubarButtons.forEach((btn) => {
+	btn.addEventListener("click", () => {
+		overlay.classList.add("overlay__active");
+		if (btn.classList.contains("menu-bar__btns__item--apple-logo")) {
+			apple.classList.add("menu-bar__modal__apple__active");
+		} else if (btn.classList.contains("menu-bar__btns__item--current-app")) {
+			currentApp.classList.add("menu-bar__modal__current-app__active");
+		} else if (btn.classList.contains("menu-bar__btns__item--file")) {
+			file.classList.add("menu-bar__modal__file__active");
+		} else if (btn.classList.contains("menu-bar__btns__item--edit")) {
+			edit.classList.add("menu-bar__modal__edit__active");
+		} else if (btn.classList.contains("menu-bar__btns__item--view")) {
+			view.classList.add("menu-bar__modal__view__active");
+		} else if (btn.classList.contains("menu-bar__btns__item--go")) {
+			go.classList.add("menu-bar__modal__go__active");
+		} else if (btn.classList.contains("menu-bar__btns__item--window")) {
+			windowModal.classList.add("menu-bar__modal__window__active");
+		} else if (btn.classList.contains("menu-bar__btns__item--help")) {
+			help.classList.add("menu-bar__modal__help__active");
+		}
+	});
+});
+
+overlay.addEventListener("click", () => {
+	overlay.classList.remove("overlay__active");
+	menubarModals.forEach((modal) => {
+		if (modal.classList.contains("menu-bar__modal__apple__active")) {
+			modal.classList.remove("menu-bar__modal__apple__active");
+		} else if (
+			modal.classList.contains("menu-bar__modal__current-app__active")
+		) {
+			modal.classList.remove("menu-bar__modal__current-app__active");
+		} else if (modal.classList.contains("menu-bar__modal__file__active")) {
+			modal.classList.remove("menu-bar__modal__file__active");
+		} else if (modal.classList.contains("menu-bar__modal__edit__active")) {
+			modal.classList.remove("menu-bar__modal__edit__active");
+		} else if (modal.classList.contains("menu-bar__modal__view__active")) {
+			modal.classList.remove("menu-bar__modal__view__active");
+		} else if (modal.classList.contains("menu-bar__modal__go__active")) {
+			modal.classList.remove("menu-bar__modal__go__active");
+		} else if (modal.classList.contains("menu-bar__modal__window__active")) {
+			modal.classList.remove("menu-bar__modal__window__active");
+		} else if (modal.classList.contains("menu-bar__modal__help__active")) {
+			modal.classList.remove("menu-bar__modal__help__active");
+		}
+	});
+});

@@ -4,6 +4,7 @@ $primary: rgba(209, 118, 0, 0.362);
 $secondary: lightblue;
 $tertiary: rgb(127, 127, 206);
 $menu-modal: rgba(0, 0, 0, 0.38);
+$selected: #CD4684;
 
 * {
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
@@ -14,6 +15,17 @@ main {
   flex-direction: column;
   height: 900px;
   width: 100vh;
+
+  .overlay {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 1000;
+    visibility: hidden;
+    &__active {
+      visibility: visible;
+    }
+  }
 
   .wallpaper {
     height: 100vh;
@@ -39,6 +51,7 @@ main {
     justify-content: space-between;
     &__btns {
       display: flex;
+      align-items: center;
       &__item {
         background-color: rgba(255, 255, 255, 0);
         color: white;
@@ -67,41 +80,58 @@ main {
       padding: 5px 0px 5px 10px;
       width: 372px;
       position: fixed;
-      z-index: 10;
+      z-index: 1000;
       top: 30.23px;
       -webkit-filter: drop-shadow(2px 2px 3px #00000037);
       filter: drop-shadow(2px 2px 3px #00000037);
+      visibility: hidden;
       &__apple{
-        display: none;
         left: 11px;
+        &__active{
+          visibility: visible;
+        }
       }
       &__current-app {
-        display: none;
         left: 73px;
+        &__active{
+          visibility: visible;
+        }
       }
       &__file {
-        display: none;
         left: 170px;
+        &__active{
+          visibility: visible;
+        }
       }
       &__edit {
-        display: none;
         left: 238px;
+        &__active{
+          visibility: visible;
+        }
       }
       &__view {
-        display: none;
         left: 308px;
+        &__active{
+          visibility: visible;
+        }
       }
       &__go {
-        display: none;
         left: 390px;
+        &__active{
+          visibility: visible;
+        }
       }
       &__window {
-        display: none;
         left: 452px;
+        &__active{
+          visibility: visible;
+        }
       }
       &__help {
-        display: none;
         left: 558px;
+        &__active{
+          visibility: visible;
+        }
       }
       &__list {
         list-style: none;
@@ -190,7 +220,7 @@ main {
 
   .app-modal {
     position: fixed;
-    z-index: 10;
+    z-index: 4;
     top: 6vh;
     left: 20vw;
     height: 80vh;
@@ -200,11 +230,14 @@ main {
     // display: none;
     &__top-bar {
       height: 64px;
-      width: 100%;
+      width: 60vw;
       background-color: #3B373C;
       border-bottom: 1px solid black;
       border-radius: 15px 15px 0 0;
       margin: 0.1px;
+      position: fixed;
+      z-index: 9;
+
       &__btns {
         height: 50px;
         width: 90px;
@@ -346,9 +379,119 @@ main {
     }
     &--reminders {
       &--sidebar {
-        border: 2px dashed red;
-        height: 100%;
-        width: 40%;
+        border: 2px solid rgba(255, 255, 255, 0);
+        border-radius: 14px 0 0 14px;
+        height: 748px;
+        width: 30%;
+        position:relative;
+        top: 0px;
+        z-index: 15;
+        background-color: #6f3635d2;
+        backdrop-filter: blur(20px);
+        &__search {
+          margin: 75px 0 0 8px;
+          width: 90%;
+          color: #956160;
+          background-color: #6f3635b6;
+          border: 0.5px solid #956160;
+          border-radius: 5px;
+          padding: 5px;
+        }
+        &__my-lists {
+          color: #956160;
+          margin: 20px 0 0 19px;
+          font-size: 0.8em;
+        }
+        &__todo{
+          width: 87%;
+          display: flex;
+          padding: 9px;
+          border: 1px solid $selected;
+          background-color: $selected;
+          border-radius: 5px;
+          align-items: center;
+          margin-left: 8px;
+          margin-top: 3px;
+          &--emoji {
+            width: 20px;
+            height: 20px;
+            background-color: lightskyblue;
+            border-radius: 50%;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          &--title {
+            margin-left: 10px;
+            color: white;
+          }
+
+
+        }
+      }
+      &--reminder-section {
+        position: relative;
+        left: 306px;
+        top: -690px;
+        height: 690px;
+        width: 702px;
+        background-color: #291D2E;
+        &__title {
+          color: #0984FF;
+          position: absolute;
+          top: 30px;
+          left: 20px;
+          font-size: 3em;
+        }
+        &__list-container {
+          position: absolute;
+          top: 90px;
+          &__reminder-list {
+            list-style: none;
+            font-size: 1.3em;
+            color: white;
+            &__item {
+              border-bottom: 1px solid rgba(169, 169, 169, 0.461);
+              display: flex;
+              align-items: center;
+              padding: 10px;
+              &__done-button {
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+                margin-right: 20px;
+                background-color: #291D2E;
+                border: 0.5px solid darkgray;
+              }
+            }
+
+          }
+          &__input-container {
+            background-color: none;
+            margin-left: 40px;
+            margin-top: 20px;
+            border-bottom: 1px solid rgba(169, 169, 169, 0.461);
+            width: 628px;
+            display: flex;
+            align-items: center;
+            padding: 0 0 10px 10px;
+            position: absolute;
+            z-index: 1000;
+            &__done-button {
+              height: 30px;
+              width: 30px;
+              border-radius: 50%;
+              margin-right: 20px;
+              background-color: #291D2E;
+              border: 0.5px solid darkgray;
+            }
+            &__input {
+              background-color: #291D2E;
+              border: 1px solid #291D2E;
+            }
+          }
+        }
       }
     }
   }

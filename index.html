@@ -9,18 +9,19 @@
 </head>
 <body onload="updateTime()">
   <main>
+    <div class="overlay"></div>
     <img class="wallpaper" src="./images/ventura-wallpaper.jpg" alt="windows xp wallpaper">
     <div class="menu-background"></div>
     <div class="menu-bar">
       <div class="menu-bar__btns">
-        <button class="menu-bar__btns__item menu-bar__btns__item--apple-logo"><img src="./images/apple.png" alt="apple-logo"></button>
-        <button class="menu-bar__btns__item menu-bar__btns__item--current-app">Finder</button>
-        <button class="menu-bar__btns__item">File</button>
-        <button class="menu-bar__btns__item">Edit</button>
-        <button class="menu-bar__btns__item">View</button>
-        <button class="menu-bar__btns__item">Go</button>
-        <button class="menu-bar__btns__item">Window</button>
-        <button class="menu-bar__btns__item">Help</button>
+        <button class="menu-bar__btns menu-bar__btns__item menu-bar__btns__item--apple-logo"><img src="./images/apple.png" alt="apple-logo"></button>
+        <button class="menu-bar__btns menu-bar__btns__item menu-bar__btns__item--current-app">Finder</button>
+        <button class="menu-bar__btns menu-bar__btns__item menu-bar__btns__item--file">File</button>
+        <button class="menu-bar__btns menu-bar__btns__item menu-bar__btns__item--edit">Edit</button>
+        <button class="menu-bar__btns menu-bar__btns__item menu-bar__btns__item--view">View</button>
+        <button class="menu-bar__btns menu-bar__btns__item menu-bar__btns__item--go">Go</button>
+        <button class="menu-bar__btns menu-bar__btns__item menu-bar__btns__item--window">Window</button>
+        <button class="menu-bar__btns menu-bar__btns__item menu-bar__btns__item--help">Help</button>
       </div>
 
       <div class="menu-bar__tray">
@@ -30,7 +31,7 @@
       </div>
     </div>
 
-    <div class="menu-bar__modal menu-bar__modal__apple">
+    <div id="apple" class="menu-bar__modal menu-bar__modal__apple">
       <ul class="menu-bar__modal__list">
         <li class="menu-bar__modal__list__item">About This Mac</li>
         <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
@@ -49,7 +50,7 @@
         <li class="menu-bar__modal__list__item"><span>Log Out User...</span><span class="menu-bar__modal__list__item--shortcut">⇧ ⌘ Q</span></li>
       </ul>
     </div>
-    <div class="menu-bar__modal menu-bar__modal__current-app">
+    <div id="currentApp" class="menu-bar__modal menu-bar__modal__current-app">
       <ul class="menu-bar__modal__list">
         <li class="menu-bar__modal__list__item">About</li>
         <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
@@ -64,7 +65,7 @@
         <li class="menu-bar__modal__list__item">Show All</li>
       </ul>
     </div>
-    <div class="menu-bar__modal menu-bar__modal__file">
+    <div id="file" class="menu-bar__modal menu-bar__modal__file">
       <ul class="menu-bar__modal__list">
         <li class="menu-bar__modal__list__item"><span>New File...</span><span class="menu-bar__modal__list__item--shortcut">⌃ ⌥ ⌘ N</span></li>
         <li class="menu-bar__modal__list__item"><span>New Window</span><span class="menu-bar__modal__list__item--shortcut">⇧ ⌘ N</span></li>
@@ -80,7 +81,7 @@
         <li class="menu-bar__modal__list__item"><span>Close Window</span><span class="menu-bar__modal__list__item--shortcut">⇧ ⌘ W</span></li>
       </ul>
     </div>
-    <div class="menu-bar__modal menu-bar__modal__edit">
+    <div id="edit" class="menu-bar__modal menu-bar__modal__edit">
       <ul class="menu-bar__modal__list">
         <li class="menu-bar__modal__list__item menu-bar__modal__list__item--gray"><span>Undo</span><span class="menu-bar__modal__list__item--shortcut">⌘ Z</span></li>
         <li class="menu-bar__modal__list__item menu-bar__modal__list__item--gray"><span>Redo</span><span class="menu-bar__modal__list__item--shortcut">⇧ ⌘ Z</span></li>
@@ -96,7 +97,7 @@
         <li class="menu-bar__modal__list__item">Emoji & Symbols</li>
       </ul>
     </div>
-    <div class="menu-bar__modal menu-bar__modal__view">
+    <div id="view" class="menu-bar__modal menu-bar__modal__view">
       <ul class="menu-bar__modal__list">
         <li class="menu-bar__modal__list__item"><span>Hide Sidebar</span><span class="menu-bar__modal__list__item--shortcut">⌃ ⌘ S</span></li>
         <li class="menu-bar__modal__list__item menu-bar__modal__list__item--gray"><span>Hide Preview</span><span class="menu-bar__modal__list__item--shortcut">⇧ ⌘ P</span></li>
@@ -112,7 +113,7 @@
         <li class="menu-bar__modal__list__item menu-bar__modal__list__item--gray">Enter Fullscreen</li>
       </ul>
     </div>
-    <div class="menu-bar__modal menu-bar__modal__go">
+    <div id="go" class="menu-bar__modal menu-bar__modal__go">
       <ul class="menu-bar__modal__list">
         <li class="menu-bar__modal__list__item menu-bar__modal__list__item--gray"><span>Back</span><span class="menu-bar__modal__list__item--shortcut">⌘ [</span></li>
         <li class="menu-bar__modal__list__item menu-bar__modal__list__item--gray"><span>Forward</span><span class="menu-bar__modal__list__item--shortcut">⌘ ]</span></li>
@@ -126,7 +127,7 @@
         <li class="menu-bar__modal__list__item"><span>Go To Folder...</span><span class="menu-bar__modal__list__item--shortcut">⇧ ⌘ G</span></li>
       </ul>
     </div>
-    <div class="menu-bar__modal menu-bar__modal__window">
+    <div id="window" class="menu-bar__modal menu-bar__modal__window">
       <ul class="menu-bar__modal__list">
         <li class="menu-bar__modal__list__item"><span>Minimise</span><span class="menu-bar__modal__list__item--shortcut">⌘ M</span></li>
         <li class="menu-bar__modal__list__item menu-bar__modal__list__item--gray">Zoom</li>
@@ -141,7 +142,7 @@
         <li class="menu-bar__modal__list__item">Bring All to Front</li>
       </ul>
     </div>
-    <div class="menu-bar__modal menu-bar__modal__help">
+    <div id="help" class="menu-bar__modal menu-bar__modal__help">
       <ul class="menu-bar__modal__list">
         <li class="menu-bar__modal__list__item"><input type="text" placeholder="Search"></li>
         <li class="menu-bar__modal__list__item">Tips for your Mac</li>
@@ -197,7 +198,7 @@
 
 
     <div class="app-modal">
-      <div class="app-modal__top-bar">
+      <div class="app-modal__top-bar app-modal__top-bar--transparent">
         <div class="app-modal__top-bar__btns">
           <button class="app-modal__top-bar__btns__btn app-modal__top-bar__btns__btn--close"></button>
           <button class="app-modal__top-bar__btns__btn app-modal__top-bar__btns__btn--minimise"></button>
@@ -205,7 +206,7 @@
         </div>
       </div>
       <div class="app-modal--reminders app-modal--reminders--sidebar">
-        <input class="app-modal--reminders--sidebar__search" type="text" placeholder="search">
+        <input class="app-modal--reminders--sidebar__search" type="text" placeholder="Search">
         <p class="app-modal--reminders--sidebar__my-lists">My Lists</p>
         <div class="app-modal--reminders--sidebar__todo">
           <div class="app-modal--reminders--sidebar__todo--emoji">🤔</div>
@@ -214,10 +215,14 @@
       </div>
       <div class="app-modal--reminders--reminder-section">
         <h1 class="app-modal--reminders--reminder-section__title">To Do</h1>
-        <p class="app-modal--reminders--reminder-section__completed-amount">0 Completed</p>
-        <ul class="app-modal--reminders--reminder-section__reminder-list">
-          <li class="app-modal--reminders--reminder-section__reminder-list__item"><button class="app-modal--reminders--reminder-section__reminder-list__item__done-button"></button>FakeOS project</li>
-        </ul>
+        <div class="app-modal--reminders--reminder-section__list-container">
+          <ul class="app-modal--reminders--reminder-section__list-container__reminder-list">
+            <li class="app-modal--reminders--reminder-section__list-container__reminder-list__item"><button class="app-modal--reminders--reminder-section__list-container__reminder-list__item__done-button"></button>FakeOS project</li>
+          </ul>
+          <div class="app-modal--reminders--reminder-section__list-container__input-container">
+            <button class="app-modal--reminders--reminder-section__list-container__input-container__done-button"></button><input type="text" class="app-modal--reminders--reminder-section__list-container__input-container__input">
+          </div>
+        </div>
       </div>
     </div>
 

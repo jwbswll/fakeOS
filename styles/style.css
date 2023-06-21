@@ -9,6 +9,16 @@ main {
   height: 900px;
   width: 100vh;
 }
+main .overlay {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 1000;
+  visibility: hidden;
+}
+main .overlay__active {
+  visibility: visible;
+}
 main .wallpaper {
   height: 100vh;
   width: 100vw;
@@ -32,6 +42,7 @@ main .menu-bar {
 }
 main .menu-bar__btns {
   display: flex;
+  align-items: center;
 }
 main .menu-bar__btns__item {
   background-color: rgba(255, 255, 255, 0);
@@ -60,42 +71,59 @@ main .menu-bar__modal {
   padding: 5px 0px 5px 10px;
   width: 372px;
   position: fixed;
-  z-index: 10;
+  z-index: 1000;
   top: 30.23px;
   -webkit-filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2156862745));
   filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2156862745));
+  visibility: hidden;
 }
 main .menu-bar__modal__apple {
-  display: none;
   left: 11px;
 }
+main .menu-bar__modal__apple__active {
+  visibility: visible;
+}
 main .menu-bar__modal__current-app {
-  display: none;
   left: 73px;
 }
+main .menu-bar__modal__current-app__active {
+  visibility: visible;
+}
 main .menu-bar__modal__file {
-  display: none;
   left: 170px;
 }
+main .menu-bar__modal__file__active {
+  visibility: visible;
+}
 main .menu-bar__modal__edit {
-  display: none;
   left: 238px;
 }
+main .menu-bar__modal__edit__active {
+  visibility: visible;
+}
 main .menu-bar__modal__view {
-  display: none;
   left: 308px;
 }
+main .menu-bar__modal__view__active {
+  visibility: visible;
+}
 main .menu-bar__modal__go {
-  display: none;
   left: 390px;
 }
+main .menu-bar__modal__go__active {
+  visibility: visible;
+}
 main .menu-bar__modal__window {
-  display: none;
   left: 452px;
 }
+main .menu-bar__modal__window__active {
+  visibility: visible;
+}
 main .menu-bar__modal__help {
-  display: none;
   left: 558px;
+}
+main .menu-bar__modal__help__active {
+  visibility: visible;
 }
 main .menu-bar__modal__list {
   list-style: none;
@@ -179,7 +207,7 @@ main .desktop__icon__name {
 }
 main .app-modal {
   position: fixed;
-  z-index: 10;
+  z-index: 4;
   top: 6vh;
   left: 20vw;
   height: 80vh;
@@ -189,11 +217,13 @@ main .app-modal {
 }
 main .app-modal__top-bar {
   height: 64px;
-  width: 100%;
+  width: 60vw;
   background-color: #3B373C;
   border-bottom: 1px solid black;
   border-radius: 15px 15px 0 0;
   margin: 0.1px;
+  position: fixed;
+  z-index: 9;
 }
 main .app-modal__top-bar__btns {
   height: 50px;
@@ -330,9 +360,116 @@ main .app-modal--textedit__textbox__textarea {
   outline: none;
 }
 main .app-modal--reminders--sidebar {
-  border: 2px dashed red;
-  height: 100%;
-  width: 40%;
+  border: 2px solid rgba(255, 255, 255, 0);
+  border-radius: 14px 0 0 14px;
+  height: 748px;
+  width: 30%;
+  position: relative;
+  top: 0px;
+  z-index: 15;
+  background-color: rgba(111, 54, 53, 0.8235294118);
+  backdrop-filter: blur(20px);
+}
+main .app-modal--reminders--sidebar__search {
+  margin: 75px 0 0 8px;
+  width: 90%;
+  color: #956160;
+  background-color: rgba(111, 54, 53, 0.7137254902);
+  border: 0.5px solid #956160;
+  border-radius: 5px;
+  padding: 5px;
+}
+main .app-modal--reminders--sidebar__my-lists {
+  color: #956160;
+  margin: 20px 0 0 19px;
+  font-size: 0.8em;
+}
+main .app-modal--reminders--sidebar__todo {
+  width: 87%;
+  display: flex;
+  padding: 9px;
+  border: 1px solid #CD4684;
+  background-color: #CD4684;
+  border-radius: 5px;
+  align-items: center;
+  margin-left: 8px;
+  margin-top: 3px;
+}
+main .app-modal--reminders--sidebar__todo--emoji {
+  width: 20px;
+  height: 20px;
+  background-color: lightskyblue;
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .app-modal--reminders--sidebar__todo--title {
+  margin-left: 10px;
+  color: white;
+}
+main .app-modal--reminders--reminder-section {
+  position: relative;
+  left: 306px;
+  top: -690px;
+  height: 690px;
+  width: 702px;
+  background-color: #291D2E;
+}
+main .app-modal--reminders--reminder-section__title {
+  color: #0984FF;
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  font-size: 3em;
+}
+main .app-modal--reminders--reminder-section__list-container {
+  position: absolute;
+  top: 90px;
+}
+main .app-modal--reminders--reminder-section__list-container__reminder-list {
+  list-style: none;
+  font-size: 1.3em;
+  color: white;
+}
+main .app-modal--reminders--reminder-section__list-container__reminder-list__item {
+  border-bottom: 1px solid rgba(169, 169, 169, 0.461);
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+main .app-modal--reminders--reminder-section__list-container__reminder-list__item__done-button {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 20px;
+  background-color: #291D2E;
+  border: 0.5px solid darkgray;
+}
+main .app-modal--reminders--reminder-section__list-container__input-container {
+  background-color: none;
+  margin-left: 40px;
+  margin-top: 20px;
+  border-bottom: 1px solid rgba(169, 169, 169, 0.461);
+  width: 628px;
+  display: flex;
+  align-items: center;
+  padding: 0 0 10px 10px;
+  position: absolute;
+  z-index: 1000;
+}
+main .app-modal--reminders--reminder-section__list-container__input-container__done-button {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 20px;
+  background-color: #291D2E;
+  border: 0.5px solid darkgray;
+}
+main .app-modal--reminders--reminder-section__list-container__input-container__input {
+  background-color: #291D2E;
+  border: 1px solid #291D2E;
 }
 main .dock-section {
   width: 100vw;
