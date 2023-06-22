@@ -161,7 +161,12 @@ const reminderList = document.querySelector(
 	".app-modal--reminders--reminder-section__list-container__reminder-list"
 );
 
-let remindersDone = document.querySelectorAll("#remindersDone");
+const removeReminder = (event) => {
+	event.target.parentNode.remove();
+	btn.classList.add(
+		"app-modal--reminders--reminder-section__list-container__reminder-list__item__done-button--active"
+	);
+};
 
 reminderForm.addEventListener("submit", (event) => {
 	event.preventDefault();
@@ -169,24 +174,26 @@ reminderForm.addEventListener("submit", (event) => {
 	console.log(reminder);
 	if (reminder) {
 		const newListItem = reminderList.appendChild(document.createElement("li"));
-		newListItem.innerHTML =
-			'<button class="app-modal--reminders--reminder-section__list-container__reminder-list__item__done-button" id="remindersDone"></button>' +
-			reminder;
 		newListItem.classList.add(
 			"app-modal--reminders--reminder-section__list-container__reminder-list__item"
 		);
+		newListItem.innerHTML = `<button class="app-modal--reminders--reminder-section__list-container__reminder-list__item__done-button reminders-done">
+		</button> ${reminder}`;
+		newListItem.firstChild.setAttribute("id", "remindersDone");
+		console.log("hello", newListItem.firstChild);
+		newListItem.firstChild.addEventListener("click", (event) => {
+			setTimeout(removeReminder(event), 2000);
+		});
 	}
 	document.querySelector("#reminderInput").value = "";
-	remindersDone = document.querySelectorAll("#remindersDone");
-	console.log(remindersDone);
-	btnIndex++;
 });
 
 document.querySelectorAll("#remindersDone").forEach((btn) => {
 	btn.addEventListener("click", (event) => {
-		event.preventDefault();
-		event.target.parentNode.remove();
-		remindersDone = document.querySelectorAll("#remindersDone");
-		console.log("btn ppress", remindersDone);
+		// event.target.parentNode.remove();
+		// btn.classList.add(
+		// 	"app-modal--reminders--reminder-section__list-container__reminder-list__item__done-button--active"
+		// );
+		setTimeout(removeReminder(event), 2000);
 	});
 });

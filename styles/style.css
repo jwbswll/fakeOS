@@ -458,6 +458,7 @@ main .app-modal--reminders--reminder-section {
   width: 702px;
   background-color: #291D2E;
   border-radius: 0 0 14px 0;
+  overflow: auto;
 }
 main .app-modal--reminders--reminder-section__title {
   color: #0984FF;
@@ -488,17 +489,21 @@ main .app-modal--reminders--reminder-section__list-container__reminder-list__ite
   border-radius: 50%;
   margin-right: 20px;
   background-color: #291D2E;
-  border: 0.5px solid darkgray;
+  border: 1px solid darkgray;
+}
+main .app-modal--reminders--reminder-section__list-container__reminder-list__item__done-button:hover {
+  background-color: #0984FF;
+  border-color: #0984FF;
 }
 main .app-modal--reminders--reminder-section__list-container__input-container {
   background-color: none;
   margin-left: 40px;
-  margin-top: 20px;
+  margin-top: 10px;
   border-bottom: 1px solid rgba(169, 169, 169, 0.461);
   width: 628px;
   display: flex;
   align-items: center;
-  padding: 0 0 10px 10px;
+  padding: 0 0 0px 10px;
   position: absolute;
   z-index: 1000;
 }
@@ -506,9 +511,11 @@ main .app-modal--reminders--reminder-section__list-container__input-container__d
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  margin-right: 20px;
+  margin-right: 19px;
   background-color: #291D2E;
-  border: 0.5px solid darkgray;
+  border: 1px solid darkgray;
+  margin-bottom: 10px;
+  padding-right: 20px;
 }
 main .app-modal--reminders--reminder-section__list-container__input-container__input {
   background-color: #291D2E;
@@ -519,6 +526,7 @@ main .app-modal--reminders--reminder-section__list-container__input-container__i
   outline: none;
   font-size: 1.3em;
   width: 618px;
+  padding-bottom: 10px;
 }
 main .app-modal--reminders--reminder-section__list-container__input-container__submit {
   visibility: hidden;

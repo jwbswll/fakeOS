@@ -477,6 +477,7 @@ main {
         width: 702px;
         background-color: #291D2E;
         border-radius: 0 0 14px 0;
+        overflow: auto;
         &__title {
           color: #0984FF;
           position: absolute;
@@ -503,7 +504,11 @@ main {
                 border-radius: 50%;
                 margin-right: 20px;
                 background-color: #291D2E;
-                border: 0.5px solid darkgray;
+                border: 1px solid darkgray;
+                &:hover {
+                  background-color: #0984FF;
+                  border-color: #0984FF;
+                }
               }
             }
 
@@ -511,21 +516,23 @@ main {
           &__input-container {
             background-color: none;
             margin-left: 40px;
-            margin-top: 20px;
+            margin-top: 10px;
             border-bottom: 1px solid rgba(169, 169, 169, 0.461);
             width: 628px;
             display: flex;
             align-items: center;
-            padding: 0 0 10px 10px;
+            padding: 0 0 0px 10px;
             position: absolute;
             z-index: 1000;
             &__done-button {
               height: 30px;
               width: 30px;
               border-radius: 50%;
-              margin-right: 20px;
+              margin-right: 19px;
               background-color: #291D2E;
-              border: 0.5px solid darkgray;
+              border: 1px solid darkgray;
+              margin-bottom: 10px;
+              padding-right: 20px;
             }
             &__input {
               background-color: #291D2E;
@@ -536,6 +543,7 @@ main {
               outline: none;
               font-size: 1.3em;
               width: 618px;
+              padding-bottom: 10px;
             }
             &__submit {
               visibility: hidden;
