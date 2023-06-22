@@ -161,13 +161,6 @@ const reminderList = document.querySelector(
 	".app-modal--reminders--reminder-section__list-container__reminder-list"
 );
 
-const removeReminder = (event) => {
-	event.target.parentNode.remove();
-	btn.classList.add(
-		"app-modal--reminders--reminder-section__list-container__reminder-list__item__done-button--active"
-	);
-};
-
 reminderForm.addEventListener("submit", (event) => {
 	event.preventDefault();
 	const reminder = document.querySelector("#reminderInput").value;
@@ -182,7 +175,10 @@ reminderForm.addEventListener("submit", (event) => {
 		newListItem.firstChild.setAttribute("id", "remindersDone");
 		console.log("hello", newListItem.firstChild);
 		newListItem.firstChild.addEventListener("click", (event) => {
-			setTimeout(removeReminder(event), 2000);
+			event.target.parentNode.remove();
+			btn.classList.add(
+				"app-modal--reminders--reminder-section__list-container__reminder-list__item__done-button--active"
+			);
 		});
 	}
 	document.querySelector("#reminderInput").value = "";
@@ -190,10 +186,9 @@ reminderForm.addEventListener("submit", (event) => {
 
 document.querySelectorAll("#remindersDone").forEach((btn) => {
 	btn.addEventListener("click", (event) => {
-		// event.target.parentNode.remove();
-		// btn.classList.add(
-		// 	"app-modal--reminders--reminder-section__list-container__reminder-list__item__done-button--active"
-		// );
-		setTimeout(removeReminder(event), 2000);
+		event.target.parentNode.remove();
+		btn.classList.add(
+			"app-modal--reminders--reminder-section__list-container__reminder-list__item__done-button--active"
+		);
 	});
 });
