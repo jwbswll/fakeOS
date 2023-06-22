@@ -141,6 +141,10 @@ main .menu-bar__modal__list__item {
   width: 360px;
   padding: 3px 0px 3px 0px;
 }
+main .menu-bar__modal__list__item:hover {
+  background-color: #CD4684;
+  border-radius: 5px;
+}
 main .menu-bar__modal__list__item--shortcut {
   color: rgba(211, 211, 211, 0.323);
 }
@@ -227,7 +231,7 @@ main .app-modal__top-bar {
   border-radius: 15px 15px 0 0;
   margin: 0.1px;
   position: fixed;
-  z-index: 9;
+  z-index: 999;
 }
 main .app-modal__top-bar__btns {
   height: 50px;
@@ -239,7 +243,7 @@ main .app-modal__top-bar__btns__btn {
   border: 1px solid transparent;
   border-radius: 50%;
   position: absolute;
-  z-index: 11;
+  z-index: 10000;
 }
 main .app-modal__top-bar__btns__btn--close {
   background-color: red;
@@ -309,25 +313,16 @@ main .app-modal--photos {
 main .app-modal--photos--active {
   visibility: visible;
 }
-main .app-modal--photos__main {
-  border: 0.5px solid darkgray;
-  border-radius: 15px;
-  width: 59.99vw;
-  height: 44.78vw;
-  margin: 0.01%;
-  position: absolute;
-  left: 20vw;
-  top: 6.1vh;
-  z-index: 11;
-}
 main .app-modal--photos__main--title-bar {
-  width: 97.02%;
+  width: 980px;
   height: 65px;
   background-color: #2B212C;
   padding: 10px 15px;
-  position: absolute;
-  top: 64px;
-  z-index: 1000;
+  position: relative;
+  top: -694px;
+  left: 336px;
+  z-index: 15;
+  margin: 0;
 }
 main .app-modal--photos__main--title-bar__title {
   color: white;
@@ -344,17 +339,17 @@ main .app-modal--photos__main--title-bar__amount-of-photos {
   left: 113px;
 }
 main .app-modal--photos__main--gallery {
-  display: none;
   background-color: #1E1E1E;
   height: 590px;
-  width: 98%;
+  width: 989px;
   border-radius: 0 0 15px 15px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 10px;
   position: absolute;
-  top: 142px;
+  top: 201px;
+  left: 336px;
 }
 main .app-modal--photos__main--gallery__img {
   height: 150px;
@@ -384,12 +379,8 @@ main .app-modal--textedit__textbox__textarea {
   resize: none;
   outline: none;
   position: absolute;
-}
-main .app-modal--reminders {
-  visibility: hidden;
-}
-main .app-modal--reminders--active {
-  visibility: visible;
+  width: 99.6%;
+  top: 1px;
 }
 main .app-modal--reminders--sidebar {
   border: 2px solid rgba(255, 255, 255, 0);
@@ -448,6 +439,7 @@ main .app-modal--reminders--reminder-section {
   height: 690px;
   width: 702px;
   background-color: #291D2E;
+  border-radius: 0 0 14px 0;
 }
 main .app-modal--reminders--reminder-section__title {
   color: #0984FF;
@@ -470,6 +462,7 @@ main .app-modal--reminders--reminder-section__list-container__reminder-list__ite
   display: flex;
   align-items: center;
   padding: 10px;
+  width: 618px;
 }
 main .app-modal--reminders--reminder-section__list-container__reminder-list__item__done-button {
   height: 30px;
@@ -501,7 +494,16 @@ main .app-modal--reminders--reminder-section__list-container__input-container__d
 }
 main .app-modal--reminders--reminder-section__list-container__input-container__input {
   background-color: #291D2E;
-  border: 1px solid #291D2E;
+  border: none;
+  color: white;
+  border: none;
+  resize: none;
+  outline: none;
+  font-size: 1.3em;
+  width: 618px;
+}
+main .app-modal--reminders--reminder-section__list-container__input-container__submit {
+  visibility: hidden;
 }
 main .dock-section {
   width: 100vw;

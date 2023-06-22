@@ -159,7 +159,7 @@
     <div class="app-modal app-modal__photos">
       <div class="app-modal__top-bar"></div>
         <div class="app-modal__top-bar__btns">
-          <button class="app-modal__top-bar__btns__btn app-modal__top-bar__btns__btn--close"></button>
+          <button class="app-modal__top-bar__btns__btn app-modal__top-bar__btns__btn--close photos1"></button>
           <button class="app-modal__top-bar__btns__btn app-modal__top-bar__btns__btn--minimise"></button>
           <button class="app-modal__top-bar__btns__btn app-modal__top-bar__btns__btn--maximise"></button>
         </div>
@@ -196,10 +196,10 @@
     </div>
 
 
-    <div class="app-modal">
+    <div class="app-modal app-modal__reminders">
       <div class="app-modal__top-bar app-modal__top-bar--transparent">
         <div class="app-modal__top-bar__btns">
-          <button class="app-modal__top-bar__btns__btn app-modal__top-bar__btns__btn--close"></button>
+          <button class="app-modal__top-bar__btns__btn app-modal__top-bar__btns__btn--close reminders"></button>
           <button class="app-modal__top-bar__btns__btn app-modal__top-bar__btns__btn--minimise"></button>
           <button class="app-modal__top-bar__btns__btn app-modal__top-bar__btns__btn--maximise"></button>
         </div>
@@ -218,9 +218,9 @@
           <ul class="app-modal--reminders--reminder-section__list-container__reminder-list">
             <li class="app-modal--reminders--reminder-section__list-container__reminder-list__item"><button class="app-modal--reminders--reminder-section__list-container__reminder-list__item__done-button"></button>FakeOS project</li>
           </ul>
-          <div class="app-modal--reminders--reminder-section__list-container__input-container">
-            <button class="app-modal--reminders--reminder-section__list-container__input-container__done-button"></button><input type="text" class="app-modal--reminders--reminder-section__list-container__input-container__input">
-          </div>
+          <form class="app-modal--reminders--reminder-section__list-container__input-container" id="reminderForm">
+            <button class="app-modal--reminders--reminder-section__list-container__input-container__done-button"></button><input type="text" id="reminderInput" class="app-modal--reminders--reminder-section__list-container__input-container__input"><button class="app-modal--reminders--reminder-section__list-container__input-container__submit" type="submit" id="remindersDone"> </button>
+          </form>
         </div>
       </div>
     </div>
@@ -228,7 +228,7 @@
     <div class="app-modal app-modal__textedit">
       <div class="app-modal__top-bar">
         <div class="app-modal__top-bar__btns">
-          <button class="app-modal__top-bar__btns__btn app-modal__top-bar__btns__btn--close"></button>
+          <button class="app-modal__top-bar__btns__btn app-modal__top-bar__btns__btn--close textedit"></button>
           <button class="app-modal__top-bar__btns__btn app-modal__top-bar__btns__btn--minimise"></button>
           <button class="app-modal__top-bar__btns__btn app-modal__top-bar__btns__btn--maximise"></button>
         </div>
@@ -237,7 +237,7 @@
         </div>
       </div>
         <div class="app-modal--textedit__textbox">
-          <textarea class="app-modal--textedit__textbox__textarea" cols="102" rows="35" resize="none"></textarea>
+          <textarea class="app-modal--textedit__textbox__textarea" cols="101" rows="34" resize="none"></textarea>
         </div>
       </div>
     </div>
@@ -245,9 +245,9 @@
     <section class="dock-section">
       <div class="dock">
         <div class="dock__app"><img class="dock__app__icon" src="./images/finder.png" alt="finder"><div class="dock__app__dot--app-open"></div></div>
-        <div class="dock__app"><img class="dock__app__big" src="./images/photos.png" alt="photos"><div class="dock__app__dot"></div></div>
-        <div class="dock__app"><img class="dock__app__big" src="./images/Reminders.png" alt="photos"><div class="dock__app__dot"></div></div>
-        <div class="dock__app"><img class="dock__app__icon" src="./images/TextEdit.png" alt="text edit"><div class="dock__app__dot"></div></div>
+        <div class="dock__app photos"><img class="dock__app__big" src="./images/photos.png" alt="photos"><div class="dock__app__dot"></div></div>
+        <div class="dock__app reminders"><img class="dock__app__big" src="./images/Reminders.png" alt="photos"><div class="dock__app__dot"></div></div>
+        <div class="dock__app textedit"><img class="dock__app__icon" src="./images/TextEdit.png" alt="text edit"><div class="dock__app__dot"></div></div>
         <div class="dock__separator"></div>
         <div class="dock__app dock__app--recycle-bin"><img class="dock__app__icon" src="./images/recycle-bin.png" alt="recycle bin"></div>
       </div>

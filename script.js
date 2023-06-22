@@ -174,6 +174,15 @@ desktopIcons.forEach((icon) => {
 			document
 				.querySelector(".app-modal--photos")
 				.classList.add("app-modal--photos--active");
+			document
+				.querySelector(".app-modal__textedit")
+				.classList.remove("app-modal__active");
+			document
+				.querySelector(".app-modal__top-bar__textedit")
+				.classList.remove("app-modal__top-bar__textedit--active");
+			document
+				.querySelector(".app-modal__reminders")
+				.classList.remove("app-modal__active");
 		} else if (icon.classList.contains("textedit")) {
 			document
 				.querySelector(".app-modal__textedit")
@@ -181,6 +190,169 @@ desktopIcons.forEach((icon) => {
 			document
 				.querySelector(".app-modal__top-bar__textedit")
 				.classList.add("app-modal__top-bar__textedit--active");
+			document
+				.querySelector(".app-modal__photos")
+				.classList.remove("app-modal__active");
+			document
+				.querySelector(".app-modal__top-bar--photos")
+				.classList.remove("app-modal__top-bar--photos--active");
+			document
+				.querySelector(".app-modal--photos")
+				.classList.remove("app-modal--photos--active");
+			document
+				.querySelector(".app-modal__reminders")
+				.classList.remove("app-modal__active");
+		} else if (icon.classList.contains("reminders")) {
+			document
+				.querySelector(".app-modal__reminders")
+				.classList.add("app-modal__active");
+			document
+				.querySelector(".app-modal__photos")
+				.classList.remove("app-modal__active");
+			document
+				.querySelector(".app-modal__top-bar--photos")
+				.classList.remove("app-modal__top-bar--photos--active");
+			document
+				.querySelector(".app-modal--photos")
+				.classList.remove("app-modal--photos--active");
+			document
+				.querySelector(".app-modal__textedit")
+				.classList.remove("app-modal__active");
+			document
+				.querySelector(".app-modal__top-bar__textedit")
+				.classList.remove("app-modal__top-bar__textedit--active");
 		}
+	});
+});
+
+const dockIcons = document.querySelectorAll(".dock__app");
+
+dockIcons.forEach((icon) => {
+	icon.addEventListener("click", () => {
+		if (icon.classList.contains("photos")) {
+			document
+				.querySelector(".app-modal__photos")
+				.classList.add("app-modal__active");
+			document
+				.querySelector(".app-modal__top-bar--photos")
+				.classList.add("app-modal__top-bar--photos--active");
+			document
+				.querySelector(".app-modal--photos")
+				.classList.add("app-modal--photos--active");
+			document
+				.querySelector(".app-modal__textedit")
+				.classList.remove("app-modal__active");
+			document
+				.querySelector(".app-modal__top-bar__textedit")
+				.classList.remove("app-modal__top-bar__textedit--active");
+			document
+				.querySelector(".app-modal__reminders")
+				.classList.remove("app-modal__active");
+		} else if (icon.classList.contains("textedit")) {
+			document
+				.querySelector(".app-modal__textedit")
+				.classList.add("app-modal__active");
+			document
+				.querySelector(".app-modal__top-bar__textedit")
+				.classList.add("app-modal__top-bar__textedit--active");
+			document
+				.querySelector(".app-modal__photos")
+				.classList.remove("app-modal__active");
+			document
+				.querySelector(".app-modal__top-bar--photos")
+				.classList.remove("app-modal__top-bar--photos--active");
+			document
+				.querySelector(".app-modal--photos")
+				.classList.remove("app-modal--photos--active");
+			document
+				.querySelector(".app-modal__reminders")
+				.classList.remove("app-modal__active");
+		} else if (icon.classList.contains("reminders")) {
+			document
+				.querySelector(".app-modal__reminders")
+				.classList.add("app-modal__active");
+			document
+				.querySelector(".app-modal__photos")
+				.classList.remove("app-modal__active");
+			document
+				.querySelector(".app-modal__top-bar--photos")
+				.classList.remove("app-modal__top-bar--photos--active");
+			document
+				.querySelector(".app-modal--photos")
+				.classList.remove("app-modal--photos--active");
+			document
+				.querySelector(".app-modal__textedit")
+				.classList.remove("app-modal__active");
+			document
+				.querySelector(".app-modal__top-bar__textedit")
+				.classList.remove("app-modal__top-bar__textedit--active");
+		}
+	});
+});
+
+const closeBtns = document.querySelectorAll(
+	".app-modal__top-bar__btns__btn--close"
+);
+console.log(closeBtns);
+
+closeBtns.forEach((btn) => {
+	btn.addEventListener("click", () => {
+		if (btn.classList.contains("photos1")) {
+			document
+				.querySelector(".app-modal__photos")
+				.classList.remove("app-modal__active");
+			document
+				.querySelector(".app-modal__top-bar--photos")
+				.classList.remove("app-modal__top-bar--photos--active");
+			document
+				.querySelector(".app-modal--photos")
+				.classList.remove("app-modal--photos--active");
+		} else if (btn.classList.contains("textedit")) {
+			document
+				.querySelector(".app-modal__textedit")
+				.classList.remove("app-modal__active");
+			document
+				.querySelector(".app-modal__top-bar__textedit")
+				.classList.remove("app-modal__top-bar__textedit--active");
+		} else if (btn.classList.contains("reminders")) {
+			document
+				.querySelector(".app-modal__reminders")
+				.classList.remove("app-modal__active");
+		}
+	});
+});
+
+const reminderForm = document.querySelector("#reminderForm");
+const reminderInput = document.querySelector("#reminderInput");
+
+const reminderList = document.querySelector(
+	".app-modal--reminders--reminder-section__list-container__reminder-list"
+);
+
+console.log(reminderList.length);
+
+reminderForm.addEventListener("submit", (event) => {
+	event.preventDefault();
+	const reminder = document.querySelector("#reminderInput").value;
+	console.log(reminder);
+	if (reminder) {
+		const newListItem = reminderList.appendChild(document.createElement("li"));
+		newListItem.innerHTML =
+			'<button class="app-modal--reminders--reminder-section__list-container__reminder-list__item__done-button"></button>' +
+			reminder;
+		newListItem.classList.add(
+			"app-modal--reminders--reminder-section__list-container__reminder-list__item"
+		);
+	}
+	document.querySelector("#reminderInput").value = "";
+});
+
+const remindersDone = document.querySelectorAll("remindersDone");
+
+remindersDone.forEach((btn) => {
+	btn.addEventListener("click", (event) => {
+		event.preventDefault();
+		const index = reminderList.getElementsByTagName("li").length;
+		console.log(index);
 	});
 });

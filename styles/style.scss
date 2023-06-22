@@ -147,6 +147,10 @@ main {
           justify-content: space-between;
           width: 360px;
           padding: 3px 0px 3px 0px;
+          &:hover {
+            background-color: $selected;
+            border-radius: 5px;
+          }
           &--shortcut {
             color: rgba(211, 211, 211, 0.323);
           }
@@ -239,7 +243,7 @@ main {
       border-radius: 15px 15px 0 0;
       margin: 0.1px;
       position: fixed;
-      z-index: 9;
+      z-index: 999;
 
 
       &__btns {
@@ -251,7 +255,7 @@ main {
           border: 1px solid transparent;
           border-radius: 50%;
           position: absolute;
-          z-index: 11;
+          z-index: 10000;
           &--close {
             background-color: red;
             left: 20px;
@@ -323,23 +327,16 @@ main {
         visibility: visible;
       }
       &__main {
-        border: 0.5px solid darkgray;
-        border-radius: 15px;
-        width: 59.99vw;
-        height: 44.78vw;
-        margin: 0.01%;
-        position: absolute;
-        left: 20vw;
-        top: 6.1vh;
-        z-index: 11;
         &--title-bar {
-          width: 97.02%;
+          width: 980px;
           height: 65px;
           background-color: #2B212C;
           padding: 10px 15px;
-          position: absolute;
-          top: 64px;
-          z-index: 1000;
+          position: relative;
+          top: -694px;
+          left: 336px;
+          z-index: 15;
+          margin: 0;
           &__title {
             color: white;
           }
@@ -356,17 +353,17 @@ main {
           }
         }
         &--gallery {
-          display: none;
           background-color: #1E1E1E;
           height: 590px;
-          width: 98%;
+          width: 989px;
           border-radius: 0 0 15px 15px;
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
           padding: 10px;
           position: absolute;
-          top: 142px;
+          top: 201px;
+          left: 336px;
           &__img {
             height: 150px;
             width: 200px;
@@ -396,14 +393,12 @@ main {
         resize: none;
         outline: none;
         position: absolute;
+        width: 99.6%;
+        top: 1px;
         }
       }
     }
     &--reminders {
-      visibility: hidden;
-      &--active {
-        visibility: visible;
-      }
       &--sidebar {
         border: 2px solid rgba(255, 255, 255, 0);
         border-radius: 14px 0 0 14px;
@@ -463,6 +458,7 @@ main {
         height: 690px;
         width: 702px;
         background-color: #291D2E;
+        border-radius: 0 0 14px 0;
         &__title {
           color: #0984FF;
           position: absolute;
@@ -482,6 +478,7 @@ main {
               display: flex;
               align-items: center;
               padding: 10px;
+              width: 618px;
               &__done-button {
                 height: 30px;
                 width: 30px;
@@ -514,7 +511,16 @@ main {
             }
             &__input {
               background-color: #291D2E;
-              border: 1px solid #291D2E;
+              border: none;
+              color: white;
+              border: none;
+              resize: none;
+              outline: none;
+              font-size: 1.3em;
+              width: 618px;
+            }
+            &__submit {
+              visibility: hidden;
             }
           }
         }
