@@ -9,6 +9,7 @@ $selected: #CD4684;
 * {
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
   margin: 0;
+  cursor: url(images/my-cursor-design.png), auto;
 }
 main {
   display: flex;
@@ -57,9 +58,20 @@ main {
         color: white;
         border: none;
         font-size: 1.1em;
-        padding: 0 20px 0 20px;;
+        padding: 0px 15px 0 15px;;
+        height: 30px;
+        border-radius: 3px;
+        &:active {
+          background-color: rgba(255, 255, 255, 0.259);
+        }
+        &--active {
+          background-color: rgba(255, 255, 255, 0.259);
+        }
         &--current-app {
           font-weight: 600;
+          width: 100px;
+          display: flex;
+          justify-content: center;
         }
         &--apple-logo {
           display: flex;
@@ -86,49 +98,49 @@ main {
       filter: drop-shadow(2px 2px 3px #00000037);
       visibility: hidden;
       &__apple{
-        left: 11px;
+        left: 1px;
         &__active{
           visibility: visible;
         }
       }
       &__current-app {
-        left: 73px;
+        left: 61px;
         &__active{
           visibility: visible;
         }
       }
       &__file {
-        left: 170px;
+        left: 155px;
         &__active{
           visibility: visible;
         }
       }
       &__edit {
-        left: 238px;
+        left: 216px;
         &__active{
           visibility: visible;
         }
       }
       &__view {
-        left: 308px;
+        left: 276px;
         &__active{
           visibility: visible;
         }
       }
       &__go {
-        left: 390px;
+        left: 346px;
         &__active{
           visibility: visible;
         }
       }
       &__window {
-        left: 452px;
+        left: 401px;
         &__active{
           visibility: visible;
         }
       }
       &__help {
-        left: 558px;
+        left: 496px;
         &__active{
           visibility: visible;
         }
@@ -145,11 +157,18 @@ main {
           color: white;
           display: flex;
           justify-content: space-between;
-          width: 360px;
-          padding: 3px 0px 3px 0px;
-          &:hover {
-            background-color: $selected;
-            border-radius: 5px;
+          width: 354px;
+          padding: 3px 4px 3px 4px;
+          cursor: default;
+          span {
+            cursor:default;
+          }
+          &--white {
+            &:hover {
+              background-color: $selected;
+              border-radius: 5px;
+              cursor:default;
+            }
           }
           &--shortcut {
             color: rgba(211, 211, 211, 0.323);
@@ -174,7 +193,7 @@ main {
       width: 240px;
       align-items: center;
       &__item {
-        margin: 0 10px 0 10px;
+        margin: 0 0px 0 10px;
         color: white;
         font-size: 1.1em;
         display: flex;
@@ -182,7 +201,7 @@ main {
         align-items: center;
       }
       #clock {
-        width: 150px;
+        width: 180px;
       }
     }
   }
@@ -232,6 +251,7 @@ main {
     border: 1px solid black;
     border-radius: 16px;
     visibility: hidden;
+    box-shadow: 2px 2px 5px #00000055;
     &__active {
       visibility: visible;
     }
@@ -244,8 +264,6 @@ main {
       margin: 0.1px;
       position: fixed;
       z-index: 999;
-
-
       &__btns {
         height: 50px;
         width: 90px;

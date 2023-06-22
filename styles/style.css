@@ -1,6 +1,7 @@
 * {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
   margin: 0;
+  cursor: url(images/my-cursor-design.png), auto;
 }
 
 main {
@@ -49,10 +50,21 @@ main .menu-bar__btns__item {
   color: white;
   border: none;
   font-size: 1.1em;
-  padding: 0 20px 0 20px;
+  padding: 0px 15px 0 15px;
+  height: 30px;
+  border-radius: 3px;
+}
+main .menu-bar__btns__item:active {
+  background-color: rgba(255, 255, 255, 0.259);
+}
+main .menu-bar__btns__item--active {
+  background-color: rgba(255, 255, 255, 0.259);
 }
 main .menu-bar__btns__item--current-app {
   font-weight: 600;
+  width: 100px;
+  display: flex;
+  justify-content: center;
 }
 main .menu-bar__btns__item--apple-logo {
   display: flex;
@@ -78,49 +90,49 @@ main .menu-bar__modal {
   visibility: hidden;
 }
 main .menu-bar__modal__apple {
-  left: 11px;
+  left: 1px;
 }
 main .menu-bar__modal__apple__active {
   visibility: visible;
 }
 main .menu-bar__modal__current-app {
-  left: 73px;
+  left: 61px;
 }
 main .menu-bar__modal__current-app__active {
   visibility: visible;
 }
 main .menu-bar__modal__file {
-  left: 170px;
+  left: 155px;
 }
 main .menu-bar__modal__file__active {
   visibility: visible;
 }
 main .menu-bar__modal__edit {
-  left: 238px;
+  left: 216px;
 }
 main .menu-bar__modal__edit__active {
   visibility: visible;
 }
 main .menu-bar__modal__view {
-  left: 308px;
+  left: 276px;
 }
 main .menu-bar__modal__view__active {
   visibility: visible;
 }
 main .menu-bar__modal__go {
-  left: 390px;
+  left: 346px;
 }
 main .menu-bar__modal__go__active {
   visibility: visible;
 }
 main .menu-bar__modal__window {
-  left: 452px;
+  left: 401px;
 }
 main .menu-bar__modal__window__active {
   visibility: visible;
 }
 main .menu-bar__modal__help {
-  left: 558px;
+  left: 496px;
 }
 main .menu-bar__modal__help__active {
   visibility: visible;
@@ -138,12 +150,17 @@ main .menu-bar__modal__list__item {
   color: white;
   display: flex;
   justify-content: space-between;
-  width: 360px;
-  padding: 3px 0px 3px 0px;
+  width: 354px;
+  padding: 3px 4px 3px 4px;
+  cursor: default;
 }
-main .menu-bar__modal__list__item:hover {
+main .menu-bar__modal__list__item span {
+  cursor: default;
+}
+main .menu-bar__modal__list__item--white:hover {
   background-color: #CD4684;
   border-radius: 5px;
+  cursor: default;
 }
 main .menu-bar__modal__list__item--shortcut {
   color: rgba(211, 211, 211, 0.323);
@@ -166,7 +183,7 @@ main .menu-bar__tray {
   align-items: center;
 }
 main .menu-bar__tray__item {
-  margin: 0 10px 0 10px;
+  margin: 0 0px 0 10px;
   color: white;
   font-size: 1.1em;
   display: flex;
@@ -174,7 +191,7 @@ main .menu-bar__tray__item {
   align-items: center;
 }
 main .menu-bar__tray #clock {
-  width: 150px;
+  width: 180px;
 }
 main .desktop {
   margin: 20px;
@@ -219,6 +236,7 @@ main .app-modal {
   border: 1px solid black;
   border-radius: 16px;
   visibility: hidden;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3333333333);
 }
 main .app-modal__active {
   visibility: visible;
