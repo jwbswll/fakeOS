@@ -332,13 +332,13 @@ main .app-modal--photos--active {
   visibility: visible;
 }
 main .app-modal--photos__main--title-bar {
-  width: 980px;
+  width: 58.4vw;
   height: 65px;
   background-color: #2B212C;
   padding: 10px 15px;
   position: relative;
   top: -694px;
-  left: 336px;
+  left: 20vw;
   z-index: 15;
   margin: 0;
 }
@@ -359,7 +359,7 @@ main .app-modal--photos__main--title-bar__amount-of-photos {
 main .app-modal--photos__main--gallery {
   background-color: #1E1E1E;
   height: 590px;
-  width: 989px;
+  width: 59vw;
   border-radius: 0 0 15px 15px;
   display: flex;
   flex-wrap: wrap;
@@ -367,7 +367,8 @@ main .app-modal--photos__main--gallery {
   padding: 10px;
   position: absolute;
   top: 201px;
-  left: 336px;
+  left: 20vw;
+  overflow: auto;
 }
 main .app-modal--photos__main--gallery__img {
   height: 150px;
@@ -452,10 +453,10 @@ main .app-modal--reminders--sidebar__todo--title {
 }
 main .app-modal--reminders--reminder-section {
   position: relative;
-  left: 306px;
+  left: 18vw;
   top: -690px;
   height: 690px;
-  width: 702px;
+  width: 42vw;
   background-color: #291D2E;
   border-radius: 0 0 14px 0;
   overflow: auto;

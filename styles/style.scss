@@ -344,13 +344,13 @@ main {
       }
       &__main {
         &--title-bar {
-          width: 980px;
+          width: 58.4vw;
           height: 65px;
           background-color: #2B212C;
           padding: 10px 15px;
           position: relative;
           top: -694px;
-          left: 336px;
+          left: 20vw;
           z-index: 15;
           margin: 0;
           &__title {
@@ -371,7 +371,7 @@ main {
         &--gallery {
           background-color: #1E1E1E;
           height: 590px;
-          width: 989px;
+          width: 59vw;
           border-radius: 0 0 15px 15px;
           display: flex;
           flex-wrap: wrap;
@@ -379,7 +379,8 @@ main {
           padding: 10px;
           position: absolute;
           top: 201px;
-          left: 336px;
+          left: 20vw;
+          overflow: auto;
           &__img {
             height: 150px;
             width: 200px;
@@ -469,10 +470,10 @@ main {
       }
       &--reminder-section {
         position: relative;
-        left: 306px;
+        left: 18vw;
         top: -690px;
         height: 690px;
-        width: 702px;
+        width: 42vw;
         background-color: #291D2E;
         border-radius: 0 0 14px 0;
         overflow: auto;
