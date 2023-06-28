@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles/style.css">
+  <script src="./script.js" type="module" defer></script>
+</head>
+<body>
+  <main>
+    <div class="overlay"></div>
+    <img class="wallpaper" src="./images/ventura-wallpaper.jpg" alt="macos ventura wallpaper">
+    <div class="menu-background"></div>
+    <div class="menu-bar">
+      <div class="menu-bar__btns">
+        <button class="menu-bar__btns menu-bar__btns__item menu-bar__btns__item--apple-logo"><img src="./images/apple.png" alt="apple-logo"></button>
+        <button class="menu-bar__btns menu-bar__btns__item menu-bar__btns__item--current-app">Finder</button>
+        <button class="menu-bar__btns menu-bar__btns__item menu-bar__btns__item--file">File</button>
+        <button class="menu-bar__btns menu-bar__btns__item menu-bar__btns__item--edit">Edit</button>
+        <button class="menu-bar__btns menu-bar__btns__item menu-bar__btns__item--view">View</button>
+        <button class="menu-bar__btns menu-bar__btns__item menu-bar__btns__item--go">Go</button>
+        <button class="menu-bar__btns menu-bar__btns__item menu-bar__btns__item--window">Window</button>
+        <button class="menu-bar__btns menu-bar__btns__item menu-bar__btns__item--help">Help</button>
+      </div>
+
+      <div class="menu-bar__tray">
+        <div class="menu-bar__tray__item"></div>
+        <div><img class="menu-bar__tray__item menu-bar__tray__item--wifi" src="./images/wifi.png" alt="wifi"></div>
+        <div><span class="menu-bar__tray__item" id="clock"></div>
+      </div>
+    </div>
+
+    <div id="apple" class="menu-bar__modal menu-bar__modal__apple">
+      <ul class="menu-bar__modal__list">
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white">About This Mac</li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white">System Settings...</li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white">App Store...</li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span class=" menu-bar__modal__list__item--white">Recent Items</span><span class=" menu-bar__modal__list__item--white">></span></li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span class=" menu-bar__modal__list__item--white">Force Quit</span><span class="menu-bar__modal__list__item--shortcut menu-bar__modal__list__item--white">⌥ ⇧ ⌘ ⎋</span></li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white">Sleep</li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white">Restart...</li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white">Shut Down...</li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item  menu-bar__modal__list__item--white"><span class="menu-bar__modal__list__item--white">Lock Screen</span><span class="menu-bar__modal__list__item--shortcut menu-bar__modal__list__item--white">⌃ ⌘ Q</span></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span class="menu-bar__modal__list__item--white">Log Out User...</span><span class="menu-bar__modal__list__item--shortcut menu-bar__modal__list__item--white">⇧ ⌘ Q</span></li>
+      </ul>
+    </div>
+    <div id="currentApp" class="menu-bar__modal menu-bar__modal__current-app">
+      <ul class="menu-bar__modal__list">
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white">About</li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span>Settings...</span><span class="menu-bar__modal__list__item--shortcut">⌘ ,</span></li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span>Empty Bin...</span><span class="menu-bar__modal__list__item--shortcut">⇧ ⌘ ⌫</span></li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span>Services</span><span>></span></li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span>Hide</span><span class="menu-bar__modal__list__item--shortcut">⌘ H</span></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span>Hide Others</span><span class="menu-bar__modal__list__item--shortcut">⌥ ⌘ H</span></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white">Show All</li>
+      </ul>
+    </div>
+    <div id="file" class="menu-bar__modal menu-bar__modal__file">
+      <ul class="menu-bar__modal__list">
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span>New File...</span><span class="menu-bar__modal__list__item--shortcut">⌃ ⌥ ⌘ N</span></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span>New Window</span><span class="menu-bar__modal__list__item--shortcut">⇧ ⌘ N</span></li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span>Open...</span><span class="menu-bar__modal__list__item--shortcut">⌘ O</span></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white">Open Folder</li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span>Save</span><span class="menu-bar__modal__list__item--shortcut">⌘ S</span></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span>Save As...</span><span class="menu-bar__modal__list__item--shortcut">⇧ ⌘ S</span></li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span>Share</span><span>></span></li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span>Close Window</span><span class="menu-bar__modal__list__item--shortcut">⇧ ⌘ W</span></li>
+      </ul>
+    </div>
+    <div id="edit" class="menu-bar__modal menu-bar__modal__edit">
+      <ul class="menu-bar__modal__list">
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--gray"><span>Undo</span><span class="menu-bar__modal__list__item--shortcut">⌘ Z</span></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--gray"><span>Redo</span><span class="menu-bar__modal__list__item--shortcut">⇧ ⌘ Z</span></li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--gray"><span>Cut</span><span class="menu-bar__modal__list__item--shortcut">⌘ X</span></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--gray"><span>Copy</span><span class="menu-bar__modal__list__item--shortcut">⌘ C</span></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--gray"><span>Paste</span><span class="menu-bar__modal__list__item--shortcut">⌘ Z</span></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span>Select All</span><span class="menu-bar__modal__list__item--shortcut">⌘ A</span></li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white">Show Clipboard</li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white">Start Dictation</li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white">Emoji & Symbols</li>
+      </ul>
+    </div>
+    <div id="view" class="menu-bar__modal menu-bar__modal__view">
+      <ul class="menu-bar__modal__list">
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span>Hide Sidebar</span><span class="menu-bar__modal__list__item--shortcut">⌃ ⌘ S</span></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--gray"><span>Hide Preview</span><span class="menu-bar__modal__list__item--shortcut">⇧ ⌘ P</span></li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--gray"><span>Hide Toolbar</span><span class="menu-bar__modal__list__item--shortcut">⌥ ⌘ T</span></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--gray"><span>Hide Status Bar</span><span class="menu-bar__modal__list__item--shortcut">⌘ /</span></li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--gray">Customise Toolbar</li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span>Show View Options</span><span class="menu-bar__modal__list__item--shortcut">⌘ J</span></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white">Show Preview Options</li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--gray">Enter Fullscreen</li>
+      </ul>
+    </div>
+    <div id="go" class="menu-bar__modal menu-bar__modal__go">
+      <ul class="menu-bar__modal__list">
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--gray"><span>Back</span><span class="menu-bar__modal__list__item--shortcut">⌘ [</span></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--gray"><span>Forward</span><span class="menu-bar__modal__list__item--shortcut">⌘ ]</span></li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span>Recent</span><span class="menu-bar__modal__list__item--shortcut">⇧ ⌘ F</span></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span>Documents</span><span class="menu-bar__modal__list__item--shortcut">⇧ ⌘ O</span></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span>Desktop</span><span class="menu-bar__modal__list__item--shortcut">⇧ ⌘ D</span></li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span>Recent Folders</span><span>></span></li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span>Go To Folder...</span><span class="menu-bar__modal__list__item--shortcut">⇧ ⌘ G</span></li>
+      </ul>
+    </div>
+    <div id="window" class="menu-bar__modal menu-bar__modal__window">
+      <ul class="menu-bar__modal__list">
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span>Minimise</span><span class="menu-bar__modal__list__item--shortcut">⌘ M</span></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--gray">Zoom</li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white">Move Window to the left side of the Screen</li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white">Move Window to the right side of the Screen</li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white"><span>Cycle Through Windows</span><span class="menu-bar__modal__list__item--shortcut">⌘ `</span></li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--gray"><span>Show Previous Tab</span><span class="menu-bar__modal__list__item--shortcut">⌃ ⇧ ⇥</span></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--gray"><span>Show Next Tab</span><span class="menu-bar__modal__list__item--shortcut">⌃ ⇥</span></li>
+        <li class="menu-bar__modal__list__item"><div class="menu-bar__modal__list__separator"></div></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white">Bring All to Front</li>
+      </ul>
+    </div>
+    <div id="help" class="menu-bar__modal menu-bar__modal__help">
+      <ul class="menu-bar__modal__list">
+        <li class="menu-bar__modal__list__item"><input type="text" placeholder="Search"></li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white">Tips for your Mac</li>
+        <li class="menu-bar__modal__list__item menu-bar__modal__list__item--white">macOS Help</li>
+      </ul>
+    </div>
+
+    <div class="desktop">
+      <div class="desktop__icon photos"><img class="desktop__icon__big" src="./images/photos.png" alt="photos"><p class="desktop__icon__name">Photos</p></div>
+      <div class="desktop__icon textedit"><img class="desktop__icon__img" src="./images/TextEdit.png" alt="text edit"><p class="desktop__icon__name">TextEdit</p></div>
+      <div class="desktop__icon reminders"><img class="desktop__icon__big" src="./images/Reminders.png" alt="reminders"><p class="desktop__icon__name">Reminders</p></div>
+    </div>
+
+    <div class="app-modal app-modal__photos">
+      <div class="app-modal__top-bar"></div>
+        <div class="app-modal__top-bar__btns">
+          <button class="app-modal__top-bar__btns__btn app-modal__top-bar__btns__btn--close photos1"></button>
+          <button class="app-modal__top-bar__btns__btn app-modal__top-bar__btns__btn--minimise"></button>
+          <button class="app-modal__top-bar__btns__btn app-modal__top-bar__btns__btn--maximise"></button>
+        </div>
+
+        <div class="app-modal__top-bar--photos">
+          <p class="app-modal__top-bar--photos--back"><</p>
+          <p class="app-modal__top-bar--photos--my-albums">My Albums</p>
+          <input class="app-modal__top-bar--photos--search" type="text" placeholder="Search">
+        </div>
+      </div>
+
+      <div class="app-modal--photos app-modal--photos__main">
+        <div class="app-modal--photos__main--title-bar">
+          <h1 class="app-modal--photos__main--title-bar__title">Bears!</h1>
+          <p class="app-modal--photos__main--title-bar__date">June 2023</p>
+          <p class="app-modal--photos__main--title-bar__amount-of-photos">12 Photos</p>
+        </div>
+
+        <div class="app-modal--photos__main--gallery">
+          <img src="https://placebear.com/200/200" alt="bear" class="app-modal--photos__main--gallery__img">
+          <img src="https://placebear.com/300/300" alt="bear" class="app-modal--photos__main--gallery__img">
+          <img src="https://placebear.com/200/400" alt="bear" class="app-modal--photos__main--gallery__img">
+          <img src="https://placebear.com/300/250" alt="bear" class="app-modal--photos__main--gallery__img">
+          <img src="https://placebear.com/280/300" alt="bear" class="app-modal--photos__main--gallery__img">
+          <img src="https://placebear.com/250/200" alt="bear" class="app-modal--photos__main--gallery__img">
+          <img src="https://placebear.com/300/200" alt="bear" class="app-modal--photos__main--gallery__img">
+          <img src="https://placebear.com/300/290" alt="bear" class="app-modal--photos__main--gallery__img">
+          <img src="https://placebear.com/280/350" alt="bear" class="app-modal--photos__main--gallery__img">
+          <img src="https://placebear.com/315/270" alt="bear" class="app-modal--photos__main--gallery__img">
+          <img src="https://placebear.com/295/315" alt="bear" class="app-modal--photos__main--gallery__img">
+          <img src="https://placebear.com/210/265" alt="bear" class="app-modal--photos__main--gallery__img">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="app-modal app-modal__reminders">
+      <div class="app-modal__top-bar app-modal__top-bar--transparent">
+        <div class="app-modal__top-bar__btns">
+          <button class="app-modal__top-bar__btns__btn app-modal__top-bar__btns__btn--close reminders"></button>
+          <button class="app-modal__top-bar__btns__btn app-modal__top-bar__btns__btn--minimise"></button>
+          <button class="app-modal__top-bar__btns__btn app-modal__top-bar__btns__btn--maximise"></button>
+        </div>
+      </div>
+      <div class="app-modal--reminders app-modal--reminders--sidebar">
+        <input class="app-modal--reminders--sidebar__search" type="text" placeholder="Search">
+        <p class="app-modal--reminders--sidebar__my-lists">My Lists</p>
+        <div class="app-modal--reminders--sidebar__todo">
+          <div class="app-modal--reminders--sidebar__todo--emoji">🤔</div>
+          <p class="app-modal--reminders--sidebar__todo--title">To Do</p>
+        </div>
+      </div>
+      <div class="app-modal--reminders--reminder-section">
+        <h1 class="app-modal--reminders--reminder-section__title">To Do</h1>
+        <div class="app-modal--reminders--reminder-section__list-container">
+          <ul class="app-modal--reminders--reminder-section__list-container__reminder-list">
+            <li class="app-modal--reminders--reminder-section__list-container__reminder-list__item">
+              <button class="app-modal--reminders--reminder-section__list-container__reminder-list__item__done-button reminders-done" id="remindersDone">
+              </button>
+              FakeOS project
+            </li>
+          </ul>
+          <form class="app-modal--reminders--reminder-section__list-container__input-container" id="reminderForm">
+            <button class="app-modal--reminders--reminder-section__list-container__input-container__done-button"></button><input type="text" id="reminderInput" class="app-modal--reminders--reminder-section__list-container__input-container__input" placeholder="add reminder"><button class="app-modal--reminders--reminder-section__list-container__input-container__submit" type="submit"></button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="app-modal app-modal__textedit">
+      <div class="app-modal__top-bar">
+        <div class="app-modal__top-bar__btns">
+          <button class="app-modal__top-bar__btns__btn app-modal__top-bar__btns__btn--close textedit"></button>
+          <button class="app-modal__top-bar__btns__btn app-modal__top-bar__btns__btn--minimise"></button>
+          <button class="app-modal__top-bar__btns__btn app-modal__top-bar__btns__btn--maximise"></button>
+        </div>
+        <div class="app-modal__top-bar__textedit">
+          <p class="app-modal__top-bar__textedit__title">Untitled.rtf</p>
+        </div>
+      </div>
+        <div class="app-modal--textedit__textbox">
+          <textarea class="app-modal--textedit__textbox__textarea" cols="101" rows="34" resize="none"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <section class="dock-section">
+      <div class="dock">
+        <div class="dock__app"><img class="dock__app__icon" src="./images/finder.png" alt="finder"><div class="dock__app__dot--app-open"></div></div>
+        <div class="dock__app photos"><img class="dock__app__big" src="./images/photos.png" alt="photos"><div class="dock__app__dot" id="dotPhotos"></div></div>
+        <div class="dock__app reminders"><img class="dock__app__big" src="./images/Reminders.png" alt="reminders"><div class="dock__app__dot" id="dotReminders"></div></div>
+        <div class="dock__app textedit"><img class="dock__app__icon" src="./images/TextEdit.png" alt="text edit"><div class="dock__app__dot" id="dotTextedit"></div></div>
+        <div class="dock__separator"></div>
+        <div class="dock__app dock__app--recycle-bin"><img class="dock__app__icon" src="./images/recycle-bin.png" alt="recycle bin"></div>
+      </div>
+  </section>
+
+  </main>
+</body>
+</html>
