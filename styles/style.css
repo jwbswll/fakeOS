@@ -7,7 +7,7 @@
 main {
   display: flex;
   flex-direction: column;
-  height: 900px;
+  height: 100vh;
   width: 100vh;
 }
 main .overlay {
@@ -158,7 +158,7 @@ main .menu-bar__modal__list__item span {
   cursor: default;
 }
 main .menu-bar__modal__list__item--white:hover {
-  background-color: #CD4684;
+  background-color: #cd4684;
   border-radius: 5px;
   cursor: default;
 }
@@ -229,7 +229,7 @@ main .desktop__icon__name {
 main .app-modal {
   position: fixed;
   z-index: 4;
-  top: 6vh;
+  top: 5vh;
   left: 20vw;
   height: 80vh;
   width: 60vw;
@@ -244,7 +244,7 @@ main .app-modal__active {
 main .app-modal__top-bar {
   height: 64px;
   width: 60vw;
-  background-color: #3B373C;
+  background-color: #3b373c;
   border-bottom: 1px solid black;
   border-radius: 15px 15px 0 0;
   margin: 0.1px;
@@ -284,7 +284,7 @@ main .app-modal__top-bar--photos {
 }
 main .app-modal__top-bar--photos--back {
   position: fixed;
-  left: 27vw;
+  left: 32vw;
   top: 7.5vh;
   font-size: 1.8em;
   z-index: 1000;
@@ -299,13 +299,13 @@ main .app-modal__top-bar--photos--my-albums {
 main .app-modal__top-bar--photos--search {
   position: fixed;
   top: 7.9vh;
-  left: 67.8vw;
+  left: 64vw;
   padding: 4px;
   font-size: 1.1em;
   width: 180px;
   border: 0.1px solid rgba(169, 169, 169, 0.236);
   border-radius: 5px;
-  background-color: #3B373C;
+  background-color: #3b373c;
   color: darkgray;
   z-index: 1000;
 }
@@ -317,7 +317,7 @@ main .app-modal__top-bar__textedit {
 }
 main .app-modal__top-bar__textedit__title {
   position: absolute;
-  left: 470px;
+  left: 420px;
   top: 22px;
   font-size: 1.1em;
   color: darkgray;
@@ -332,12 +332,12 @@ main .app-modal--photos--active {
   visibility: visible;
 }
 main .app-modal--photos__main--title-bar {
-  width: 58.4vw;
+  width: 58vw;
   height: 65px;
-  background-color: #2B212C;
+  background-color: #2b212c;
   padding: 10px 15px;
   position: relative;
-  top: -694px;
+  top: -623px;
   left: 20vw;
   z-index: 15;
   margin: 0;
@@ -357,17 +357,18 @@ main .app-modal--photos__main--title-bar__amount-of-photos {
   left: 113px;
 }
 main .app-modal--photos__main--gallery {
-  background-color: #1E1E1E;
-  height: 590px;
-  width: 59vw;
+  background-color: #1e1e1e;
+  height: 482px;
+  width: 58.8vw;
   border-radius: 0 0 15px 15px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 10px;
   position: absolute;
-  top: 201px;
+  top: 192px;
   left: 20vw;
+  z-index: 1000;
   overflow: auto;
 }
 main .app-modal--photos__main--gallery__img {
@@ -383,28 +384,29 @@ main .app-modal--textedit--active {
   visibility: visible;
 }
 main .app-modal--textedit__textbox {
-  background-color: #1E1E1E;
-  height: 91.5%;
+  background-color: #1e1e1e;
+  height: 90.3%;
   width: 100%;
   border-radius: 0 0 14px 14px;
   position: absolute;
   top: 64px;
 }
 main .app-modal--textedit__textbox__textarea {
-  background-color: #1E1E1E;
+  background-color: #1e1e1e;
   border: none;
   color: white;
   border: none;
   resize: none;
   outline: none;
   position: absolute;
+  height: 500px;
   width: 99.6%;
   top: 1px;
 }
 main .app-modal--reminders--sidebar {
   border: 2px solid rgba(255, 255, 255, 0);
   border-radius: 14px 0 0 14px;
-  height: 748px;
+  height: 99.5%;
   width: 30%;
   position: relative;
   top: 0px;
@@ -430,8 +432,8 @@ main .app-modal--reminders--sidebar__todo {
   width: 87%;
   display: flex;
   padding: 9px;
-  border: 1px solid #CD4684;
-  background-color: #CD4684;
+  border: 1px solid #cd4684;
+  background-color: #cd4684;
   border-radius: 5px;
   align-items: center;
   margin-left: 8px;
@@ -454,15 +456,15 @@ main .app-modal--reminders--sidebar__todo--title {
 main .app-modal--reminders--reminder-section {
   position: relative;
   left: 18vw;
-  top: -690px;
-  height: 690px;
+  top: -597px;
+  height: 91.5%;
   width: 42vw;
-  background-color: #291D2E;
+  background-color: #291d2e;
   border-radius: 0 0 14px 0;
   overflow: auto;
 }
 main .app-modal--reminders--reminder-section__title {
-  color: #0984FF;
+  color: #0984ff;
   position: absolute;
   top: 30px;
   left: 20px;
@@ -489,12 +491,12 @@ main .app-modal--reminders--reminder-section__list-container__reminder-list__ite
   width: 30px;
   border-radius: 50%;
   margin-right: 20px;
-  background-color: #291D2E;
+  background-color: #291d2e;
   border: 1px solid darkgray;
 }
 main .app-modal--reminders--reminder-section__list-container__reminder-list__item__done-button:hover {
-  background-color: #0984FF;
-  border-color: #0984FF;
+  background-color: #0984ff;
+  border-color: #0984ff;
 }
 main .app-modal--reminders--reminder-section__list-container__input-container {
   background-color: none;
@@ -513,13 +515,13 @@ main .app-modal--reminders--reminder-section__list-container__input-container__d
   width: 30px;
   border-radius: 50%;
   margin-right: 19px;
-  background-color: #291D2E;
+  background-color: #291d2e;
   border: 1px solid darkgray;
   margin-bottom: 10px;
   padding-right: 20px;
 }
 main .app-modal--reminders--reminder-section__list-container__input-container__input {
-  background-color: #291D2E;
+  background-color: #291d2e;
   border: none;
   color: white;
   border: none;
